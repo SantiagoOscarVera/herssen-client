@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../Layouts/LayoutCliente';
 
 function Home() {
@@ -7,9 +8,9 @@ function Home() {
       <Layout main="h-full max-w-screen-xl flex m-auto">
         <div className="flex justify-center items-center h-full">
           <div className="flex-2 flex flex-col space-y-2 w-40">
-            <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+            <Link to="/artist" className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center">
               Artist
-            </button>
+            </Link>
             <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
               Jewelry Designer
             </button>
@@ -17,7 +18,7 @@ function Home() {
               Collector
             </button>
           </div>
-          <div className="flex-2 flex flex-col space-y-2 w-40 ml-4"> {/* Se agregó ml-4 para establecer un margen izquierdo */}
+          <div className="flex-2 flex flex-col space-y-2 w-40 ml-4"> 
             <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
               Buyer
             </button>
