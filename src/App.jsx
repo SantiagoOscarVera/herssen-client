@@ -3,6 +3,7 @@ import Home from "./components/Home/Home"
 import PricingArtist from "./components/Artist/Pricing/PricingArtist";
 import ArtistDashboard from "./components/Artist/Dashboard/ArtistDashboard";
 import ArtistDashNavBar from "./components/Artist/Dashboard/ArtistDashNavBar";
+import ArtistNewItem from "./components/Artist/Dashboard/ArtistNewItem";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/artist" element={<PricingArtist />} />
-        <Route exact path="/artist/dashboard" element={<LayoutArtistDashboard/>} />
+        <Route path="/artist/dashboard" element={<LayoutArtistDashboard />} />
       </Routes>
     </>
   )
@@ -18,10 +19,13 @@ function App() {
 
 function LayoutArtistDashboard() {
   return (
-    <Routes>
-      <Route path="/" element={<ArtistDashNavBar/>}/>
-      <Route exact path="/" element={<ArtistDashboard/>}/>
-    </Routes>
+    <>
+      <ArtistDashNavBar />
+      <Routes>
+        {/* <Route exact path="/" element={<ArtistDashboard />} /> */}
+        <Route path="/" element={<ArtistNewItem/>} />
+      </Routes>
+    </>
   )
 }
 

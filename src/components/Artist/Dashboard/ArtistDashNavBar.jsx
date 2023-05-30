@@ -5,7 +5,7 @@ import { Avatar } from 'primereact/avatar';
 function ArtistDashNavBar() {
 
     return (
-        <div className='flex'>
+        <div className='flex justify-between mx-10 py-5'>
             <div className='flex items-center gap-5'>
                 <Link to={"/artist/dashboard"}>
                     <Avatar image="" size="xlarge" shape="circle" />
