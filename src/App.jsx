@@ -3,8 +3,7 @@ import Home from "./components/Home/Home"
 import PricingArtist from "./components/Artist/Pricing/PricingArtist";
 import FormArtist from "./components/Artist/FormArtist/FormArtist";
 import ArtistDashboard from "./components/Artist/Dashboard/ArtistDashboard";
-import ArtistDashNavBar from "./components/Artist/Dashboard/ArtistDashNavBar";
-import ArtistNewItem from "./components/Artist/Dashboard/ArtistNewItem";
+import ArtistNewItem from "./components/Artist/Dashboard/NewItem/ArtistNewItem"
 
 function App() {
   return (
