@@ -1,7 +1,35 @@
-import React from 'react';
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Layout from '../../Layouts/LayoutCliente';
+import Stripe from "../../Stripe/Stripe";
 
 const PricingArtist = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div className="h-screen flex flex-col">
       <Layout main="h-full max-w-screen-xl flex m-auto">
@@ -55,7 +83,7 @@ const PricingArtist = () => {
                         </li>
                       </ul>
                     </div>
-                    <a href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Artist</a>
+                    <a  onClick={openModal} href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Artist</a>
                     <p className="mt-6 text-xs leading-5 text-gray-600 flex items-center justify-center gap-x-1">
                       Already have an account?
                       <button className="text-white bg-indigo-600 hover:bg-indigo-500 hover:text-white rounded-md px-2 py-2 text-xs font-medium">
@@ -69,6 +97,47 @@ const PricingArtist = () => {
           </div>
         </div>
       </Layout>
+      {/* modal */}
+      {isModalOpen && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 text-center">
+            <div className="fixed inset-0 transition-opacity">
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+            &#8203;
+            <div 
+            ref={modalRef}
+            className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="sm:flex sm:items-start">
+                  
+                  
+
+                </div>
+              </div>
+              <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              
+                <div className="flex justify-center w-full sm:flex-row">
+                <button
+                  onClick={closeModal}
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+                >
+                  Cancel order
+                </button>
+                  <Link >
+                    <button className="mt-3 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                      Confirm order
+                    </button>
+
+                    {/* <Stripe/> */}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
