@@ -12,7 +12,7 @@ function ArtistNewItem() {
             <div className='flex flex-col items-center gap-6'>
                  <p>Upload image, Video, Audio or 3D model</p>
                 <div className="card text-center">
-                    <FileUpload name="demo[]" url={'/api/upload'} multiple accept="image/*" maxFileSize={1000000} emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
+                    <FileUpload name="demo[]" url={'/api/upload'} emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
                 </div>
                 <FormNewItem />
             </div>
