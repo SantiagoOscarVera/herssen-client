@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import {createArtistAsync  } from '../../../redux/store/artist/artistSlice';
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
     name: '',
     email: '',
@@ -10,16 +14,19 @@ const SignUp = () => {
     confirmPassword: ''
   };
 
+  
+
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    password: Yup.string().required('Password is required'),
+    name: Yup.string().required('Se requiere un nombre de usuario'),
+    email: Yup.string().email('EMail invalido').required('Se requiere un email'),
+    password: Yup.string().required('Se requiere una contraseña'),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      .required('Confirm password is required')
+      .oneOf([Yup.ref('password'), null], 'Las contraseñas no coinciden')
+      .required('Se requiere confirmar la contraseña')
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
+    dispatch(createArtistAsync(values));
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
