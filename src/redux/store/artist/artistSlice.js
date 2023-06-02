@@ -17,10 +17,21 @@ export const artistSlice = createSlice({
       state.status = STATUS_API.FAILED;
       state.error = action.payload;
     },
+    getArtistStart: (state) => {
+      state.status = 'loading';
+    },
+    getArtistSuccess: (state, action) => {
+      state.status = 'succeeded';
+      state.patients.push(action.payload);
+    },
+    getArtistFailure: (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload;
+    },
   },
 });
 
-export const { createArtistStart, createArtistSuccess, createArtistFailure } = artistSlice.actions;
+export const { createArtistStart, createArtistSuccess, createArtistFailure, getArtistStart, getArtistSuccess, getArtistFailure } = artistSlice.actions;
 
 export const createArtistAsync = (artist) => async (dispatch) => {
   try {
@@ -29,6 +40,16 @@ export const createArtistAsync = (artist) => async (dispatch) => {
     dispatch(createArtistSuccess(response.data));
   } catch (err) {
     dispatch(createArtistFailure(err.toString()));
+  }
+};
+
+export const getArtistAsync = (artist) => async (dispatch) => {
+  try {
+    dispatch(getArtistStart());
+    const response = await createArtist(artist);
+    dispatch(getArtistSuccess(response.data));
+  } catch (err) {
+    dispatch(getArtistFailure(err.toString()));
   }
 };
 

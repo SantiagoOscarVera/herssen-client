@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { createArtistAsync } from '../../../redux/store/artist/artistSlice';
+/* import { getArtistAsync } from '../../../redux/store/artist/artistSlice'; */
 
-const SignUp = () => {
+const LogIn = () => {
   const dispatch = useDispatch();
 
   const initialValues = {
-    name: '',
     email: '',
     password: '',
     confirmPassword: ''
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Se requiere nombre de usuario'),
     email: Yup.string().email('Email invalido').required('Se requiere un email'),
     password: Yup.string().required('Se requiere una contraseña'),
     confirmPassword: Yup.string()
@@ -38,7 +36,7 @@ const SignUp = () => {
           <div className="mb-8 flex flex-col items-center">
             <img src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Herssen</h1>
-            <span className="text-gray-300">Create user</span>
+            <span className="text-gray-300"></span>
           </div>
           <Formik
             initialValues={initialValues}
@@ -46,17 +44,6 @@ const SignUp = () => {
             onSubmit={handleSubmit}
           >
             <Form>
-              <div className="mb-4 text-lg">
-                <Field
-                  className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  autoComplete="off"
-                />
-                <ErrorMessage name="name" component="div" className="text-red-500 text-center" />
-              </div>
-
               <div className="mb-4 text-lg">
                 <Field
                   className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
@@ -106,4 +93,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default LogIn;

@@ -86,9 +86,11 @@ const PricingArtist = () => {
                     <a  onClick={openModal} href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Artist</a>
                     <p className="mt-6 text-xs leading-5 text-gray-600 flex items-center justify-center gap-x-1">
                       Already have an account?
+                      <Link to="/artist/login">
                       <button className="text-white bg-indigo-600 hover:bg-indigo-500 hover:text-white rounded-md px-2 py-2 text-xs font-medium">
                         Login
                       </button>
+                      </Link>
                     </p>
                   </div>
                 </div>

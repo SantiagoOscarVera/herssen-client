@@ -6,6 +6,7 @@ import ArtistDashboard from "./components/Artist/Dashboard/ArtistDashboard";
 import ArtistNewItem from "./components/Artist/Dashboard/NewItem/ArtistNewItem"
 import MyCollection from "./components/Artist/Dashboard/MyCollection/MyCollection";
 import Sales from "./components/Artist/Dashboard/Sales/Sales";
+import LoginArtist from "./components/Artist/Login/LoginArtist";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/" element={<Home />} />
       <Route exact path="/artist" element={<PricingArtist />} />
       <Route exact path="/artist/form" element={<FormArtist />} />
+      <Route exact path="/artist/login" element={<LoginArtist />} />
       <Route exact path="/artist/dashboard" element={<ArtistDashboard />} />
       <Route exact path="/artist/dashboard/item" element={<ArtistNewItem />} />
       <Route exact path="/artist/dashboard/collection" element={<MyCollection />} />
