@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -16,7 +17,7 @@ const BuyerCode = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    dispatch(getArtistAsync(values));
+    /* dispatch(getArtistAsync(values)); */
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -57,6 +58,13 @@ const BuyerCode = () => {
                   Enter Code
                 </button>
               </div>
+              <Link to ="/buyer/form" className="mt-8 flex justify-center text-lg text-black">
+                <button
+                  className="rounded-3xl bg-slate-900 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-teal-600"
+                >
+                  Form Buyer
+                </button>
+              </Link>
             </Form>
           </Formik>
         </div>
