@@ -112,10 +112,10 @@ const PricingArtist = () => {
             ref={modalRef}
             className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div className="sm:flex sm:items-start">
-                  
-                  
-
+                <div className="flex justify-center sm:flex sm:items-start">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
+              ¡Gracias por realizar el pago!
+                </h3>  
                 </div>
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
@@ -125,14 +125,12 @@ const PricingArtist = () => {
                   onClick={closeModal}
                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                 >
-                  Cancel order
+                  Cancel
                 </button>
-                  <Link >
+                  <Link to="/artist/form">
                     <button className="mt-3 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                      Confirm order
+                      Crear cuenta
                     </button>
-
-                    {/* <Stripe/> */}
                   </Link>
                 </div>
               </div>

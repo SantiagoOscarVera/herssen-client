@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-/* import { getArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+import { getArtistAsync } from '../../../redux/store/artist/artistSlice';
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -16,13 +16,10 @@ const LogIn = () => {
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Email invalido').required('Se requiere un email'),
     password: Yup.string().required('Se requiere una contraseña'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Las contraseñas no coinciden')
-      .required('Se requiere confirmar la contraseña')
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    dispatch(createArtistAsync(values));
+    dispatch(getArtistAsync(values));
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -36,7 +33,7 @@ const LogIn = () => {
           <div className="mb-8 flex flex-col items-center">
             <img src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Herssen</h1>
-            <span className="text-gray-300"></span>
+            <span className="text-gray-300">Enter your user data</span>
           </div>
           <Formik
             initialValues={initialValues}
@@ -64,17 +61,6 @@ const LogIn = () => {
                   autoComplete="off"
                 />
                 <ErrorMessage name="password" component="div" className="text-red-500 text-center" />
-              </div>
-
-              <div className="mb-4 text-lg">
-                <Field
-                  className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  autoComplete="off"
-                />
-                <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-center" />
               </div>
 
               <div className="mt-8 flex justify-center text-lg text-black">
