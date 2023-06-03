@@ -7,6 +7,7 @@ import ArtistNewItem from "./components/Artist/Dashboard/NewItem/ArtistNewItem"
 import MyCollection from "./components/Artist/Dashboard/MyCollection/MyCollection";
 import Sales from "./components/Artist/Dashboard/Sales/Sales";
 import LoginArtist from "./components/Artist/Login/LoginArtist";
+import BuyerCode from "./components/Buyer/Code";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/artist/dashboard/item" element={<ArtistNewItem />} />
       <Route exact path="/artist/dashboard/collection" element={<MyCollection />} />
       <Route exact path="/artist/dashboard/sales" element={<Sales />} />
+      <Route exact path="/buyer/code" element={<BuyerCode />} />
     </Routes>
     </>
   )
