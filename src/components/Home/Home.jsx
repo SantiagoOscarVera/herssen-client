@@ -19,9 +19,9 @@ function Home() {
               </button>
             </div>
             <div className="flex-2 flex flex-col space-y-2 w-40 ml-4"> 
-              <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+              <Link to="/buyer/code" className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center">
                 Buyer
-              </button>
+              </Link>
             </div>
           </div>
         </Layout>
