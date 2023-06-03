@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 /* import { createArtistAsync } from '../../../redux/store/artist/artistSlice'; */
 
 const SignUpBuyer = () => {
@@ -101,7 +102,10 @@ const SignUpBuyer = () => {
 
               <div className="mt-4 flex justify-center text-lg text-gray-300">
                 <p className="mr-2">¿Ya tienes una cuenta?</p>
-                <a href="/buyer/login" className="text-teal-500 hover:text-teal-300">LogIn</a>
+                <Link to="/buyer/login" className="text-teal-500 hover:text-teal-300">
+                 LogIn
+                </Link>
+                
               </div>
             </Form>
           </Formik>
