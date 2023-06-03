@@ -9,6 +9,7 @@ import Sales from "./components/Artist/Dashboard/Sales/Sales";
 import LoginArtist from "./components/Artist/Login/LoginArtist";
 import BuyerCode from "./components/Buyer/CodeBuyer/Code";
 import SignUpBuyer from "./components/Buyer/FormBuyer/FormBuyer";
+import LogInBuyer from "./components/Buyer/Login/LoginBuyer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path="/artist/dashboard/sales" element={<Sales />} />
       <Route exact path="/buyer/code" element={<BuyerCode />} />
       <Route exact path="/buyer/form" element={<SignUpBuyer />} />
+      <Route exact path="/buyer/login" element={<LogInBuyer />} />
     </Routes>
     </>
   )

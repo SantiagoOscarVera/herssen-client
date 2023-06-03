@@ -1,30 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-/* import { createArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+/* import { getArtistAsync } from '../../../redux/store/artist/artistSlice'; */
 
-const SignUpBuyer = () => {
+const LogInBuyer = () => {
   const dispatch = useDispatch();
 
   const initialValues = {
-    name: '',
     email: '',
     password: '',
     confirmPassword: ''
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Se requiere nombre de usuario'),
     email: Yup.string().email('Email invalido').required('Se requiere un email'),
     password: Yup.string().required('Se requiere una contraseña'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Las contraseñas no coinciden')
-      .required('Se requiere confirmar la contraseña')
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    /* dispatch(createArtistAsync(values)); */
+    /* dispatch(getArtistAsync(values)); */
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -38,7 +33,7 @@ const SignUpBuyer = () => {
           <div className="mb-8 flex flex-col items-center">
             <img src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Herssen</h1>
-            <span className="text-gray-300">Create user</span>
+            <span className="text-gray-300">Enter your user data</span>
           </div>
           <Formik
             initialValues={initialValues}
@@ -46,17 +41,6 @@ const SignUpBuyer = () => {
             onSubmit={handleSubmit}
           >
             <Form>
-              <div className="mb-4 text-lg">
-                <Field
-                  className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  autoComplete="off"
-                />
-                <ErrorMessage name="name" component="div" className="text-red-500 text-center" />
-              </div>
-
               <div className="mb-4 text-lg">
                 <Field
                   className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
@@ -79,17 +63,6 @@ const SignUpBuyer = () => {
                 <ErrorMessage name="password" component="div" className="text-red-500 text-center" />
               </div>
 
-              <div className="mb-4 text-lg">
-                <Field
-                  className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  autoComplete="off"
-                />
-                <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-center" />
-              </div>
-
               <div className="mt-8 flex justify-center text-lg text-black">
                 <button
                   type="submit"
@@ -97,11 +70,6 @@ const SignUpBuyer = () => {
                 >
                   Register
                 </button>
-              </div>
-
-              <div className="mt-4 flex justify-center text-lg text-gray-300">
-                <p className="mr-2">¿Ya tienes una cuenta?</p>
-                <a href="/buyer/login" className="text-teal-500 hover:text-teal-300">LogIn</a>
               </div>
             </Form>
           </Formik>
@@ -111,4 +79,4 @@ const SignUpBuyer = () => {
   );
 };
 
-export default SignUpBuyer;
+export default LogInBuyer;
