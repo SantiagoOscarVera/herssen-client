@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -71,6 +72,13 @@ const LogInBuyer = () => {
                   Register
                 </button>
               </div>
+              <Link to ="/buyer/dashboard" className="mt-8 flex justify-center text-lg text-black">
+                <button
+                  className="rounded-3xl bg-slate-900 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-teal-600"
+                >
+                  Dashboard Buyer
+                </button>
+              </Link>
             </Form>
           </Formik>
         </div>
