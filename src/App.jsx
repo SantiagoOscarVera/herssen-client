@@ -10,6 +10,10 @@ import LoginArtist from "./components/Artist/Login/LoginArtist";
 import BuyerCode from "./components/Buyer/CodeBuyer/Code";
 import SignUpBuyer from "./components/Buyer/FormBuyer/FormBuyer";
 import LogInBuyer from "./components/Buyer/Login/LoginBuyer";
+import BuyerDashboard from "./components/Buyer/Dashboard/BuyerDashboard";
+import Purchased from "./components/Buyer/Dashboard/Purchased/Purchased";
+import Favourites from "./components/Buyer/Dashboard/MyFavourites/MyFavourites";
+
 
 function App() {
   return (
@@ -25,6 +29,9 @@ function App() {
       <Route exact path="/buyer/code" element={<BuyerCode />} />
       <Route exact path="/buyer/form" element={<SignUpBuyer />} />
       <Route exact path="/buyer/login" element={<LogInBuyer />} />
+      <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
+      <Route exact path="/buyer/dashboard/purchased" element={<Purchased />} />
+      <Route exact path="/buyer/dashboard/favourites" element={<Favourites />} />
     </Routes>
     </>
   )
