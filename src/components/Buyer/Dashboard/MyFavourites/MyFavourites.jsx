@@ -11,7 +11,7 @@ import { RadioButton } from 'primereact/radiobutton';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-import Layout from '../../../Layouts/ArtistDashLayout';
+import Layout from '../../../Layouts/BuyerDashLayout';
 
 
 const Favourites = () => {
