@@ -1,10 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar } from 'primereact/avatar';
 
 function NavBar() {
     const [showButtons, setShowButtons] = useState(false);
     const menuRef = useRef(null);
+
+    const ROUTES = {
+        // aca vamos a enrutar dependiendo de si el usuario es
+        // artista o buyer o lo que sea : ROUTES[user.type].dashboard
+        // [user.type] vease como el tipo de usuario que estara en el estado global
+        // o en el local storage
+        artist: {
+            dashboard: "/artist/dashboard"
+        },
+        buyer:{
+            dashboard:"/buyer/dashboard"
+        }
+    }
 
     const toggleButtons = () => {
         setShowButtons(!showButtons);
