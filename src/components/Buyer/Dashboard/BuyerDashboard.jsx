@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button } from 'primereact/button';
-import Layout from '../../Layouts/ArtistDashLayout';
+import Layout from '../../Layouts/BuyerDashLayout';
 import { Link } from 'react-router-dom';
+
 
 function BuyerDashboard() {
 

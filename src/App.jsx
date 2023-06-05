@@ -13,6 +13,7 @@ import LogInBuyer from "./components/Buyer/Login/LoginBuyer";
 import BuyerDashboard from "./components/Buyer/Dashboard/BuyerDashboard";
 import Purchased from "./components/Buyer/Dashboard/Purchased/Purchased";
 import Favourites from "./components/Buyer/Dashboard/MyFavourites/MyFavourites";
+import MarketPlace from "./components/Marketplace/Marketplace";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
       <Route exact path="/buyer/dashboard/purchased" element={<Purchased />} />
       <Route exact path="/buyer/dashboard/favourites" element={<Favourites />} />
+      <Route exact path="/marketplace" element={<MarketPlace />} />
     </Routes>
     </>
   )
