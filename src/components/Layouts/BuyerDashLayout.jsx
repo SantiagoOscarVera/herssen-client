@@ -1,12 +1,12 @@
 /* import BuyerDashNavBar from "../Buyer/Dashboard/BuyerDashNavBar"; */
-import MarketplaceNavBar from "../Marketplace/MarketplaceNavbar";
+import NavBar from "../Navbar/Navbar";
 import React from "react";
 
 const Layout = ({ children, main }) => {
   return (
     <>
       {/* <BuyerDashNavBar /> */}
-      <MarketplaceNavBar/>
+      <NavBar/>
       <main className={main}>
         {children}
       </main>
