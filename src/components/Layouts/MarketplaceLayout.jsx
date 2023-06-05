@@ -1,5 +1,6 @@
-import MarketplaceNavBar from "../Marketplace/MarketplaceNavbar";
 import React from "react";
+import MarketplaceNavBar from "../Marketplace/MarketplaceNavbar";
+import Footer from "../Footer/Footer";
 
 const Layout = ({ children, main }) => {
   return (
@@ -8,6 +9,7 @@ const Layout = ({ children, main }) => {
       <main className={main}>
         {children}
       </main>
+      <Footer/>
     </>
   );
 };
