@@ -1,4 +1,5 @@
 import React from 'react'
+import Filters from '../Filters/Filters';
 import Layout from '../Layouts/MarketplaceLayout';
 
 
@@ -13,7 +14,7 @@ function MarketPlace() {
   return (
     <Layout>
       <div>
-
+      <Filters/>
       </div>
     </Layout>
   )
