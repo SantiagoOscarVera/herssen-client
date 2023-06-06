@@ -17,6 +17,9 @@ import MarketPlace from "./components/Marketplace/Marketplace";
 import PricingJewelry from "./components/Jewelry/Pricing/PricingJewelry";
 import SignUp from "./components/Jewelry/FormJewelry/FormJewelry";
 import LogIn from "./components/Jewelry/Login/LoginJewelry"; 
+import PricingCollector from "./components/Collector/Pricing/PricingCollector";
+import FormCollector from "./components/Collector/FormCollector/FormCollector";
+import LoginCollector from "./components/Collector/Login/LoginCollector";
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
       <Route exact path="/jewelry" element={<PricingJewelry />} />
       <Route exact path="/jewelry/form" element={<SignUp />} />
       <Route exact path="/jewelry/login" element={<LogIn />} />
+      <Route exact path="/collector" element={<PricingCollector />} />
+      <Route exact path="/collector/form" element={<FormCollector />} />
+      <Route exact path="/collector/login" element={<LoginCollector />} />
     </Routes>
     </>
   )
