@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { createArtistAsync } from '../../../redux/store/artist/artistSlice';
-
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -26,7 +24,7 @@ const SignUp = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    dispatch(createArtistAsync(values));
+    // dispatch(createArtistAsync(values));
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
