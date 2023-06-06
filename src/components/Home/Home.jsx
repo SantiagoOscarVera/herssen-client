@@ -11,9 +11,9 @@ function Home() {
               <Link to="/artist" className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center">
                 Artist
               </Link>
-              <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+              <Link to="/jewelry" className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center">
                 Jewelry Designer
-              </button>
+              </Link>
               <button className="text-white bg-neutral-950 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                 Collector
               </button>

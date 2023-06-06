@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from '../../Layouts/LayoutCliente';
-import Stripe from "../../Stripe/Stripe";
+/* import Stripe from "../../Stripe/Stripe"; */
 
-const PricingArtist = () => {
+const PricingJewelry = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
@@ -39,7 +39,7 @@ const PricingArtist = () => {
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center py-5">
                   <div className="mx-auto max-w-xs px-8">
-                  <h1 className="text-gray-600 text-4xl font-bold mb-6">Artist</h1> 
+                  <h1 className="text-gray-600 text-4xl font-bold mb-6">Jewelry</h1> 
                     <p className="text-base font-semibold text-gray-600">Monthly subscription</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
                       <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
@@ -83,10 +83,10 @@ const PricingArtist = () => {
                         </li>
                       </ul>
                     </div>
-                    <a  onClick={openModal} href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Artist</a>
+                    <a  onClick={openModal} href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Jewelry</a>
                     <p className="mt-6 text-xs leading-5 text-gray-600 flex items-center justify-center gap-x-1">
                       Already have an account?
-                      <Link to="/artist/login">
+                      <Link to="/jewelry/login">
                       <button className="text-white bg-indigo-600 hover:bg-indigo-500 hover:text-white rounded-md px-2 py-2 text-xs font-medium">
                         Login
                       </button>
@@ -127,7 +127,7 @@ const PricingArtist = () => {
                 >
                   Cancel
                 </button>
-                  <Link to="/artist/form">
+                  <Link to="/jewelry/form">
                     <button className="mt-3 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                       Crear cuenta
                     </button>
@@ -142,4 +142,4 @@ const PricingArtist = () => {
   );
 };
 
-export default PricingArtist;
+export default PricingJewelry;
