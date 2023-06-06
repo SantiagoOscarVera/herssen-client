@@ -31,7 +31,12 @@ const BuyerCode = () => {
       <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-3 shadow-lg backdrop-blur-md max-sm:px-8">
         <div className="text-white">
           <div className="mb-8 flex flex-col items-center">
-            <img src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg" width="150" alt="" />
+          <img
+                src="https://media.discordapp.net/attachments/1115030128808964178/1115032798638653442/caballo_preview_rev_1.png"
+                alt="Logo"
+                style={{ width: '25%', height: '25%', marginBottom: -20, marginTop: -20 }}
+                className=""
+              />
             <h1 className="mb-2 text-2xl">Herssen</h1>
             <span className="text-gray-300">Enter your private code</span>
           </div>

@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
+/* import { useDispatch } from 'react-redux';
+import { createArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+
 
 const SignUp = () => {
-  const dispatch = useDispatch();
+  /* const dispatch = useDispatch(); */
 
   const initialValues = {
     name: '',
@@ -24,7 +26,7 @@ const SignUp = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    // dispatch(createArtistAsync(values));
+    /* dispatch(createArtistAsync(values)); */
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -32,7 +34,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png')", width: "100vw" }}>
+    <div className="flex min-h-screen items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')", width: "100vw" }}>
       <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-3 shadow-lg backdrop-blur-md max-sm:px-8">
         <div className="text-white">
           <div className="mb-8 flex flex-col items-center">
@@ -105,8 +107,8 @@ const SignUp = () => {
               </div>
               <div className="mt-4 flex justify-center text-lg text-gray-300">
                 <p className="mr-2">¿Ya tienes una cuenta?</p>
-                <Link to="/artist/login" className="text-teal-500 hover:text-teal-300">
-                 LogIn
+                <Link to="/jewelry/login" className="text-teal-500 hover:text-teal-300">
+                LogIn
                 </Link>
                 
               </div>
