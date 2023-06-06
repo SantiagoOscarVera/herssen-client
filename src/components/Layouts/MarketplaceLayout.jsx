@@ -1,11 +1,11 @@
 import React from "react";
-import MarketplaceNavBar from "../Marketplace/MarketplaceNavbar";
+import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const Layout = ({ children, main }) => {
   return (
     <>
-      <MarketplaceNavBar />
+      <NavBar />
       <main className={main}>
         {children}
       </main>

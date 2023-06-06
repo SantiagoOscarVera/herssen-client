@@ -1,10 +1,10 @@
-import ArtistDashNavBar from "../Artist/Dashboard/ArtistDashNavBar";
+import NavBar from "../Navbar/Navbar";
 import React from "react";
 
 const Layout = ({ children, main }) => {
   return (
     <>
-      <ArtistDashNavBar />
+      < NavBar/>
       <main className={main}>
         {children}
       </main>

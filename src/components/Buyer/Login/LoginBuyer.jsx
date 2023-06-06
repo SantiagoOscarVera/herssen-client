@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-/* import { getArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+import { getBuyerTest } from "../../../redux/store/user/userSlice";
+
 
 const LogInBuyer = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
   const initialValues = {
     email: '',
@@ -20,7 +22,8 @@ const LogInBuyer = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    /* dispatch(getArtistAsync(values)); */
+     dispatch(getBuyerTest()); 
+     navigate("/buyer/dashboard")
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);

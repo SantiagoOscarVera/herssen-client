@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 
 const BuyerCode = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialValues = {
     code: '',
@@ -18,6 +19,7 @@ const BuyerCode = () => {
 
   const handleSubmit = (values, { setSubmitting }) => {
     /* dispatch(getArtistAsync(values)); */
+    navigate("/buyer/login")
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
