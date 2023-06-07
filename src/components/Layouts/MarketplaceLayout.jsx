@@ -5,11 +5,13 @@ import Footer from "../Footer/Footer";
 const Layout = ({ children, main }) => {
   return (
     <>
-      <NavBar />
-      <main className={main}>
-        {children}
-      </main>
-      <Footer/>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <NavBar />
+        <main className={main} style={{ flex: '1' }}>
+          {children}
+        </main>
+        <Footer/>
+      </div>
     </>
   );
 };
