@@ -16,8 +16,3 @@ body{
   margin-right: auto;
   color: azure;
 }
-
-.carrousel .p-carousel-item .p-carousel-item-active{
-  background-color: aqua !important;
-}
-
