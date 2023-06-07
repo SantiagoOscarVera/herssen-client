@@ -3,9 +3,9 @@ import { Button } from 'primereact/button';
 import { Carousel } from 'primereact/carousel';
 import { Tag } from 'primereact/tag';
 
-const Carrousel = (products) => {
+const Carrousel = ({product}) => {
 
-
+    console.log(product);
     const responsiveOptions = [
         {
             breakpoint: '1199px',
@@ -44,7 +44,7 @@ const Carrousel = (products) => {
         return (
             <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
                 <div className="mb-3">
-                    <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="w-6 shadow-2" />
+                    <img src={product.image} alt={product.name} className="w-6 shadow-2" />
                 </div>
                 <div>
                     <h4 className="mb-1">{product.name}</h4>
@@ -61,7 +61,7 @@ const Carrousel = (products) => {
 
     return (
         <div className="card">
-            <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} className="custom-carousel" circular
+            <Carousel value={product } numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} className="custom-carousel" circular
                 autoplayInterval={3000} itemTemplate={productTemplate} />
         </div>
     )
