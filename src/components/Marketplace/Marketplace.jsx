@@ -1,6 +1,7 @@
 import React from 'react'
 import Filters from '../Filters/Filters';
 import Layout from '../Layouts/MarketplaceLayout';
+import CarrouselContainer from './CarrouselContainer/CarrouselContainer';
 
 
 function MarketPlace() {
@@ -12,10 +13,9 @@ function MarketPlace() {
   } */
 
   return (
-    <Layout>
-      <div>
+    <Layout> 
       <Filters/>
-      </div>
+      <CarrouselContainer/>
     </Layout>
   )
 }

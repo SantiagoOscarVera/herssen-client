@@ -18,12 +18,14 @@ export const { getUser } = userSlice.actions;
 //los usuarios reales en el back
 export const getArtistTest = () => (dispatch) => {
   const response = getArtistUser();
-  dispatch(getUser(response))
+  dispatch(getUser(response));
+  localStorage.setItem("userData", JSON.stringify(response));
 }
 
 export const getBuyerTest = () => (dispatch) => {
   const response = getBuyerUser();
-  dispatch(getUser(response))
+  dispatch(getUser(response));
+  localStorage.setItem("userData", JSON.stringify(response));
 }
 
 export default userSlice.reducer;
