@@ -20,6 +20,7 @@ import LogIn from "./components/Jewelry/Login/LoginJewelry";
 import PricingCollector from "./components/Collector/Pricing/PricingCollector";
 import FormCollector from "./components/Collector/FormCollector/FormCollector";
 import LoginCollector from "./components/Collector/Login/LoginCollector";
+import ShoppingCart from "./components/Marketplace/ShoppingCart/ShoppingCart";
 
 function App() {
   return (
@@ -38,13 +39,14 @@ function App() {
       <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
       <Route exact path="/buyer/dashboard/purchased" element={<Purchased />} />
       <Route exact path="/buyer/dashboard/favourites" element={<Favourites />} />
-      <Route exact path="/marketplace" element={<MarketPlace />} />
       <Route exact path="/jewelry" element={<PricingJewelry />} />
       <Route exact path="/jewelry/form" element={<SignUp />} />
       <Route exact path="/jewelry/login" element={<LogIn />} />
       <Route exact path="/collector" element={<PricingCollector />} />
       <Route exact path="/collector/form" element={<FormCollector />} />
       <Route exact path="/collector/login" element={<LoginCollector />} />
+      <Route exact path="/marketplace" element={<MarketPlace />} />
+      <Route exact path="/marketplace/shopping" element={<ShoppingCart />} />
     </Routes>
     </>
   )
