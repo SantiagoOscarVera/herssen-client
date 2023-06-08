@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'primereact/button';
 import { Carousel } from 'primereact/carousel';
-import { Tag } from 'primereact/tag';
+import { Link } from 'react-router-dom';
 
 const Carrousel = ({ product }) => {
 
@@ -23,49 +23,35 @@ const Carrousel = ({ product }) => {
         }
     ];
 
-    const getSeverity = (product) => {
-        switch (product.inventoryStatus) {
-            case 'INSTOCK':
-                return 'success';
-
-            case 'LOWSTOCK':
-                return 'warning';
-
-            case 'OUTOFSTOCK':
-                return 'danger';
-
-            default:
-                return null;
-        }
-    };
 
     const productTemplate = (product) => {
         return (
-            <div className='flex justify-center hover:-translate-y-1'>
-                <div className='flex flex-col'>
-                    <div>
-                        <img src={"https://lh3.googleusercontent.com/lSPcRd7JuGf4uJEGIruV_rothudtLMqoWSl3OEFeRe30Ag3429987e4Bcib3ZjfvvLgaVOnz_1zpTXdWWcmyFAgFzd8iQcHVS-VMhqkHhA"} alt={product.name} className="rounded-t-2xl h-40" />
-                    </div>
-                    <div className='text-black bg-white rounded-b-2xl flex flex-col p-4'>
+            <Link>
+                <div className='flex justify-center p-4'>
+                    <div className='flex flex-col duration-300 hover:-translate-y-1 '>
                         <div>
-                            <h4 className="">{product.name}</h4>
+                            <img src={"https://lh3.googleusercontent.com/lSPcRd7JuGf4uJEGIruV_rothudtLMqoWSl3OEFeRe30Ag3429987e4Bcib3ZjfvvLgaVOnz_1zpTXdWWcmyFAgFzd8iQcHVS-VMhqkHhA"} alt={product.name} className="rounded-t-2xl h-40" />
                         </div>
-                        <h6 className="">${product.price}</h6>
-                        {/* <Tag value={product.inventoryStatus} severity={getSeverity(product)}></Tag> */}
-                        <div className=" flex justify-evenly">
-                            <Button icon="pi pi-search" size='small' />
-                            <Button icon="pi pi-star-fill" size='small' />
-                            <Button icon="pi pi-cart-plus" size='small' />
+                        <div className='text-black bg-white rounded-b-2xl flex flex-col p-4'>
+                            <div className='flex justify-between pb-2 border-b border-gray-300'>
+                                <h4 className="font-medium">{product.name}</h4>
+                                <h6 className="pr-3">${product.price}</h6>
+                            </div>
+                            <div className=" flex justify-between pt-2">
+                                <Button icon="pi pi-search" size='small' />
+                                <Button icon="pi pi-star-fill" size='small' />
+                                <Button icon="pi pi-cart-plus" size='small' />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     };
 
     return (
-        <div className="carousel">
-            <Carousel value={product} numVisible={6} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='p-4'/>
+        <div>
+            <Carousel value={product} numVisible={6} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='p-4' />
         </div>
     )
 }
