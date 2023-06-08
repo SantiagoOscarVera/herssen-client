@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 /* import { createArtist } from './artistAPI'; */
-import { getArtistUser, getBuyerUser } from '../../../components/service/users';
+import { getArtistUser, getBuyerUser, getJewelryUser } from '../../../components/service/users';
 
 export const userSlice = createSlice({
   name: 'user',
@@ -18,6 +18,11 @@ export const { getUser } = userSlice.actions;
 //los usuarios reales en el back
 export const getArtistTest = () => (dispatch) => {
   const response = getArtistUser();
+  dispatch(getUser(response))
+}
+
+export const getJewelryTest = () => (dispatch) => {
+  const response = getJewelryUser();
   dispatch(getUser(response))
 }
 

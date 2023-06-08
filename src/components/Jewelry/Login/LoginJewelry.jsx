@@ -1,16 +1,17 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-/* import { useDispatch } from 'react-redux';
-import { getArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+import { useDispatch } from 'react-redux';
+import { getJewelryTest } from "../../../redux/store/user/userSlice";
+import { useNavigate, Link } from "react-router-dom";
 
 const LogIn = () => {
- /*  const dispatch = useDispatch(); */
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialValues = {
     email: '',
     password: '',
-    confirmPassword: ''
   };
 
   const validationSchema = Yup.object().shape({
@@ -19,11 +20,15 @@ const LogIn = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-   /*  dispatch(getArtistAsync(values)); */
+    //aca hay que cambiar la funcion que se dispachea 
+    //cuando esten los usuarios reales
+    dispatch(getJewelryTest());
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
+      navigate("/jewelry/dashboard")
     }, 400);
+    
   };
 
   return (
