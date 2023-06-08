@@ -17,6 +17,9 @@ function NavBar() {
         artist: {
             dashboard: "/artist/dashboard"
         },
+        jewelry: {
+            dashboard: "/jewelry/dashboard"
+        },
         buyer: {
             dashboard: "/buyer/dashboard"
         }
