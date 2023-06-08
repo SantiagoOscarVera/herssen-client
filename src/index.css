@@ -16,3 +16,7 @@ body{
   margin-right: auto;
   color: azure;
 }
+
+.carousel .p-carousel-container {
+  padding: 10px 0 10px 0;
+}
