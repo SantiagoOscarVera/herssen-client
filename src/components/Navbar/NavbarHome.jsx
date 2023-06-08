@@ -1,23 +1,25 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavbarHome = () => {
+function NavBarHome() {
 
-  return (
-    <nav className="bg-neutral-950 w-screen flex justify-between">
-    <div className="flex items-center ml-2">
-      <Link to="/">
-        <div className="flex items-center">
-          <img
-            src="https://media.discordapp.net/attachments/1112407805668884570/1112407856705192078/image.png"
-            alt="Logo"
-            className="h-12 w-16 mr-2"
-          />
-          <span className="text-white text-2xl ">Herssen</span>
+    return (
+        <div className='flex justify-between mx-10 py-5'>
+            <div className="flex items-center ml-2">
+                <Link to="/">
+                    <div className="flex items-center">
+                        <img
+                            src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg"
+                            alt="Logo"
+                            className="h-12 w-16 mr-2"
+                        />
+                        <span className="text-white text-2xl ">Herssen</span>
+                    </div>
+                </Link>
+            </div>
+
         </div>
-      </Link>
-    </div>
-    </nav>
-  );
-};
+    );
+}
 
-export default NavbarHome;
+export default NavBarHome;
