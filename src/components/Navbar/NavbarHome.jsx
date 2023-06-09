@@ -9,11 +9,12 @@ function NavBarHome() {
                 <Link to="/">
                     <div className="flex items-center">
                         <img
-                            src="https://www.logo.wine/a/logo/Ethereum/Ethereum-Diamond-Logo.wine.svg"
+                            src="https://media.discordapp.net/attachments/1115030128808964178/1115032798638653442/caballo_preview_rev_1.png"
                             alt="Logo"
-                            className="h-12 w-16 mr-2"
+                            style={{ width: '10%', height: '10%' }}
+                            className="mr-4"
                         />
-                        <span className="text-white text-2xl ">Herssen</span>
+                        <span className="text-white text-2xl">Herssen</span>
                     </div>
                 </Link>
             </div>
