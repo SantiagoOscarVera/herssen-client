@@ -64,7 +64,7 @@ function NavBar() {
                     {
                         userData.type === "buyer" ?
                         <p>
-                            <Link to="/marketplace/shopping">
+                            <Link to="/marketplace/shopping"> 
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     fill='none'

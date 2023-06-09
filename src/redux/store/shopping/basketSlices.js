@@ -15,13 +15,13 @@ const handleInitialState = () => {
     const state = JSON.parse(localStorage.getItem("basket"));
     console.log(state);
 
-    if (Object.keys(state).length) {
+    if (state && Object.keys(state).length) {
         return state;
     } else {
         localStorage.setItem("basket", JSON.stringify(initialState));
-        return initialState
+        return initialState;
     }
-}
+};
 
 const basketSlice = createSlice({
     name: "basket", // el store tiene un action que se llama basket
