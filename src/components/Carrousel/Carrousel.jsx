@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button } from 'primereact/button';
 import { Carousel } from 'primereact/carousel';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux/store/shopping/basketSlices';
 
 const Carrousel = ({ product }) => {
+
+    const dispatch = useDispatch();
+    const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("userData")));
 
     const responsiveOptions = [
         {
@@ -25,6 +30,14 @@ const Carrousel = ({ product }) => {
 
 
     const productTemplate = (product) => {
+
+        const handleFavorite = () => {
+
+        }
+        const handleAddBasket = () => {
+            dispatch(addItem(product));
+        }
+
         return (
             <Link>
                 <div className='flex justify-center p-4'>
@@ -38,9 +51,9 @@ const Carrousel = ({ product }) => {
                                 <h6 className="pr-3">${product.price}</h6>
                             </div>
                             <div className=" flex justify-between pt-2">
-                                <Button icon="pi pi-search" size='small' />
-                                <Button icon="pi pi-star-fill" size='small' />
-                                <Button icon="pi pi-cart-plus" size='small' />
+                                <Button icon="pi pi-search" size='small'/>
+                                <Button icon="pi pi-star-fill" size='small' onClick={handleFavorite} disabled={userData.type !== 'buyer'}/>
+                                <Button icon="pi pi-cart-plus" size='small' onClick ={handleAddBasket} disabled={userData.type !== 'buyer'}/>
                             </div>
                         </div>
                     </div>
