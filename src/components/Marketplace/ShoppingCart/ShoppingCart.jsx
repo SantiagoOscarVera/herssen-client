@@ -6,12 +6,13 @@ import { updateTotal } from '../../../redux/store/shopping/basketSlices';
 
 function ShoppingCart() {
 
-    const { products } = useSelector((store) => store.basket)
+    const basket = useSelector((store) => store.basket)
     const dispatch = useDispatch();
+    console.log(basket);
 
-    useEffect(() => {
-        dispatch(updateTotal())
-    }, [products, dispatch])
+    // useEffect(() => {
+    //     dispatch(updateTotal())
+    // }, [products, dispatch])
 
     return (
         <Layout>
