@@ -16,7 +16,7 @@ import Favourites from "./components/Buyer/Dashboard/MyFavourites/MyFavourites";
 import MarketPlace from "./components/Marketplace/Marketplace";
 import PricingJewelry from "./components/Jewelry/Pricing/PricingJewelry";
 import SignUp from "./components/Jewelry/FormJewelry/FormJewelry";
-import LogIn from "./components/Jewelry/Login/LoginJewelry"; 
+import LogIn from "./components/Jewelry/Login/LoginJewelry";
 import PricingCollector from "./components/Collector/Pricing/PricingCollector";
 import FormCollector from "./components/Collector/FormCollector/FormCollector";
 import LoginCollector from "./components/Collector/Login/LoginCollector";
@@ -25,6 +25,7 @@ import JewelryDashboard from "./components/Jewelry/Dashboard/JewelryDashboard";
 import JewelryNewItem from "./components/Jewelry/Dashboard/NewItem/JewelryNewItem";
 import MyCollectionJewelry from "./components/Jewelry/Dashboard/MyCollection/MyCollectionJewelry";
 import SalesJewelry from "./components/Jewelry/Dashboard/Sales/SalesJewelry";
+import Detail from "./components/Detail/Detail";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
       <Route exact path="/collector/form" element={<FormCollector />} />
       <Route exact path="/collector/login" element={<LoginCollector />} />
       <Route exact path="/marketplace" element={<MarketPlace />} />
+      <Route exact path="/marketplace/:id" element={<Detail />} />
       <Route exact path="/marketplace/shopping" element={<ShoppingCart />} />
     </Routes>
     </>

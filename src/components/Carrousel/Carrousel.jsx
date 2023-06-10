@@ -41,7 +41,7 @@ const Carrousel = ({ product }) => {
         }
 
         return (
-            <Link>
+            <Link to={`/marketplace/${product.id}`}>
                 <div className='flex justify-center p-4'>
                     <div className='flex flex-col duration-300 hover:-translate-y-1 '>
                         <div>
