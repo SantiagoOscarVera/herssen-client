@@ -12,9 +12,13 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import Layout from '../../../Layouts/BuyerDashLayout';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Favourites = () => {
+
+    const dispatch = useDispatch();
+    const favorite = useSelector(state => state.favorite);
 
     let emptyProduct = {
         id: null,
@@ -39,8 +43,8 @@ const Favourites = () => {
     const toast = useRef(null);
     const dt = useRef(null);
 
-    useEffect(() => {
-        ProductService.getProducts().then((data) => setProducts(data));
+     useEffect(() => {
+        console.log(favorite);
     }, []);
 
     const formatCurrency = (value) => {
@@ -211,13 +215,13 @@ const Favourites = () => {
         <div>
             <Toast ref={toast} />
             <div className="card">
-                
 
-                <DataTable ref={dt} value={products} 
+
+                <DataTable ref={dt} value={products}
                         dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header}>
-                    
+
                     <Column field="image" header="Image" body={imageBodyTemplate}></Column>
                     <Column field="name" header="Name" sortable style={{ minWidth: '16rem' }}></Column>
                     <Column field="artist" header="Artist" sortable style={{ minWidth: '12rem' }}></Column>

@@ -14,7 +14,7 @@ const handleInitialState = () => {
 
     const state = JSON.parse(localStorage.getItem("basket"));
 
-    if (!Object.keys(state).length) {
+    if (!state) {
         localStorage.setItem("basket", JSON.stringify(initialState));
         return initialState;
     } else {
