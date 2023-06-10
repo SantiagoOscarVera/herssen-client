@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { ProductService } from '../../../service/ProductService';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
@@ -36,22 +35,19 @@ const Favourites = () => {
     const [products, setProducts] = useState(favorites);
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
-    const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
     const [product, setProduct] = useState(emptyProduct);
-    const [selectedProducts, setSelectedProducts] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
     const toast = useRef(null);
     const dt = useRef(null);
 
     useEffect(() => {
-        console.log(favorites);
-    }, []);
+        setProducts(favorites)
+    }, [favorites]);
 
     const formatCurrency = (value) => {
         return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     };
-
 
     const hideDialog = () => {
         setSubmitted(false);
@@ -62,78 +58,16 @@ const Favourites = () => {
         setDeleteProductDialog(false);
     };
 
-    const hideDeleteProductsDialog = () => {
-        setDeleteProductsDialog(false);
-    };
-
-    // const saveProduct = () => {
-    //     setSubmitted(true);
-
-    //     if (product.name.trim()) {
-    //         let _products = [...products];
-    //         let _product = { ...product };
-
-    //         if (product.id) {
-    //             const index = findIndexById(product.id);
-
-    //             _products[index] = _product;
-    //             toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
-    //         } else {
-    //             _product.id = createId();
-    //             _product.image = 'product-placeholder.svg';
-    //             _products.push(_product);
-    //             toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
-    //         }
-
-    //         setProducts(_products);
-    //         setProductDialog(false);
-    //         setProduct(emptyProduct);
-    //     }
-    // };
-
     const confirmDeleteProduct = (product) => {
         setProduct(product);
         setDeleteProductDialog(true);
     };
 
     const deleteProduct = () => {
-        dispatch(removeFavorite(product))
+        dispatch(removeFavorite(product.id))
         setDeleteProductDialog(false);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
     };
-
-    // const findIndexById = (id) => {
-    //     let index = -1;
-
-    //     for (let i = 0; i < favorites.length; i++) {
-    //         if (favorites[i].id === id) {
-    //             index = i;
-    //             break;
-    //         }
-    //     }
-
-    //     return index;
-    // };
-
-    // const createId = () => {
-    //     let id = '';
-    //     let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-    //     for (let i = 0; i < 5; i++) {
-    //         id += chars.charAt(Math.floor(Math.random() * chars.length));
-    //     }
-
-    //     return id;
-    // };
-
-    // const deleteSelectedProducts = () => {
-    //     let _products = products.filter((val) => !selectedProducts.includes(val));
-
-    //     setProducts(_products);
-    //     setDeleteProductsDialog(false);
-    //     setSelectedProducts(null);
-    //     toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
-    // };
 
     const onCategoryChange = (e) => {
         let _product = { ...product };
@@ -201,13 +135,7 @@ const Favourites = () => {
             <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteProduct} />
         </React.Fragment>
     );
-    // const deleteProductsDialogFooter = (
-    //     <React.Fragment>
-    //         <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />
-    //         <Button label="Yes" icon="pi pi-check" severity="danger"  />
-    //     </React.Fragment>
-    // );
-
+    
     return (
         <Layout>
             <div>
@@ -295,12 +223,6 @@ const Favourites = () => {
                     </div>
                 </Dialog>
 
-                {/* <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
-                    <div className="confirmation-content">
-                        <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                        {product && <span>Are you sure you want to delete the selected products?</span>}
-                    </div>
-                </Dialog> */}
             </div>
         </Layout>
     );
