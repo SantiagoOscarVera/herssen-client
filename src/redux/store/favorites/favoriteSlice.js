@@ -7,13 +7,13 @@ const handleInitialState = () => {
     //Sino se crea el objeto en localStorage y se devuelve.
 
     const initialState = {
-        favorite: []
+        favorites: []
     }
 
-    const state = JSON.parse(localStorage.getItem("favorite"));
+    const state = JSON.parse(localStorage.getItem("favorites"));
 
     if (!state) {
-        localStorage.setItem("favorite", JSON.stringify(initialState));
+        localStorage.setItem("favorites", JSON.stringify(initialState));
         return initialState;
     } else {
         return state;
@@ -21,18 +21,25 @@ const handleInitialState = () => {
 };
 
 export const favoriteSlice = createSlice({
-  name: 'favorite',
-  initialState: handleInitialState(),
-  reducers: {
-    addFavorite: (state, {payload}) => {
-        state.favorite.push(payload);
+    name: 'favorite',
+    initialState: handleInitialState(),
+    reducers: {
+        addFavorite: (state, { payload }) => {
+            const duplicatedFav = state.favorites.find(element => element.id === payload.id)
+            if (duplicatedFav) {
+                alert("Ya tiene como favorito este Item");
+            } else {
+                state.favorites.push(payload);
+                localStorage.setItem("favorites", JSON.stringify({ ...state }));
+            }
+        },
+        removeFavorite: (state, { payload }) => {
+            state.favorites = state.favorites.filter(element => element.id !== payload)
+            localStorage.setItem("favorites", JSON.stringify({ ...state }));
+        }
     },
-    removeFavorite: (state, {payload}) => {
-        state.favorite = state.favorite.filter(element => element.id !== payload)
-    }
-  },
 });
 
-export const {addFavorite, removeFavorite} = favoriteSlice.actions;
+export const { addFavorite, removeFavorite } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer

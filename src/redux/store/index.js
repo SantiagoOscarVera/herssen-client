@@ -6,7 +6,7 @@ import basketReducer from "./shopping/basketSlices"
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    client: favoriteReducer,
+    favorite: favoriteReducer,
     basket: basketReducer,
   },
 });
