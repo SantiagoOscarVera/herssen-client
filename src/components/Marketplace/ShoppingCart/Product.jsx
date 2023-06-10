@@ -1,14 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { increaseAmount, decreaseAmount, removeItem, updateTotal } from '../../../redux/store/shopping/basketSlices';
+import { removeItem } from '../../../redux/store/shopping/basketSlices';
 
-const Product = ({name, amount, image, price, total,id}) => {
+const Product = ({ name, amount, image, price, total, id }) => {
+
     const dispatch = useDispatch();
 
     const handleRemove = () => {
         dispatch(removeItem(id))
     }
-    console.log(id);
+
     return (
         <div className='flex justify-center flex-row items-center gap-8 px-10'>
             <img src={image} alt={name + "glasses"} className="w-40" />
