@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const handleInitialState = () => {
 
-    //Se encatga de verificar si existe un objeto "basket"
+    //Se encarga de verificar si existe un objeto "basket"
     //En el local storage, si es true, lo utiliza como estado inicial, 
     //Sino se crea el objeto en localStorage y se devuelve.
 
@@ -51,12 +51,6 @@ const basketSlice = createSlice({
             state.total = state.total - deletedItem.price;
             localStorage.setItem("basket", JSON.stringify({ ...state }));
         },
-
-        updateLocal: (state) => {
-            localStorage.setItem("basket", JSON.stringify(state));
-            console.log(state);
-        }
-
     }
 })
 
