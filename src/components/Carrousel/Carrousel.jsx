@@ -4,6 +4,7 @@ import { Carousel } from 'primereact/carousel';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/store/shopping/basketSlices';
+import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
 
 const Carrousel = ({ product }) => {
 
@@ -32,14 +33,15 @@ const Carrousel = ({ product }) => {
     const productTemplate = (product) => {
 
         const handleFavorite = () => {
-
+            dispatch(addFavorite(product))
         }
+
         const handleAddBasket = () => {
             dispatch(addItem(product));
         }
 
         return (
-            <Link>
+            <Link to={`/marketplace/${product.id}`}>
                 <div className='flex justify-center p-4'>
                     <div className='flex flex-col duration-300 hover:-translate-y-1 '>
                         <div>
