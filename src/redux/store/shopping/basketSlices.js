@@ -13,13 +13,12 @@ const handleInitialState = () => {
     }
 
     const state = JSON.parse(localStorage.getItem("basket"));
-    console.log(state);
 
-    if (state && Object.keys(state).length) {
-        return state;
-    } else {
+    if (!Object.keys(state).length) {
         localStorage.setItem("basket", JSON.stringify(initialState));
         return initialState;
+    } else {
+        return state;
     }
 };
 
@@ -28,34 +27,31 @@ const basketSlice = createSlice({
     initialState: handleInitialState(),
     reducers: {
         addItem: (state, { payload }) => {
-            state.products.push({ item: payload, itemAmount: 1 });
-            updateTotal();
+            const itemDuplicate = state.products.find(element => element.id === payload.id);
+            if (itemDuplicate) {
+                alert("ya cargo este item a su carrito");
+            } else {
+                state.products.push(payload);
+                state.amount++;
+                state.total = state.total + payload.price;
+            }
+            localStorage.setItem("basket", JSON.stringify({ ...state }));
         },
         removeItem: (state, { payload }) => {
-            state.products = state.products.filter(element => element.item.id !== payload.id);
-            updateTotal();
+            let deletedItem;
+            state.products = state.products.reduce((accumulator, element) => {
+                if (element.id === payload) {
+                    deletedItem = element;
+                } else {
+                    accumulator.push(element);
+                }
+                return accumulator;
+            }, []);
+            state.amount--;
+            state.total = state.total - deletedItem.price;
+            localStorage.setItem("basket", JSON.stringify({ ...state }));
         },
-        increaseAmount: (state, { payload }) => {
-            const product = state.products.find(element => element.item.id === payload.id);
-            product.itemAmount++;
-            updateTotal();
-        },
-        decreaseAmount: (state, { payload }) => {
-            const product = state.products.find(element => element.item.id === payload.id);
-            product.itemAmount--;
-            updateTotal();
-        },
-        updateTotal: (state) => {
-            let amount = 0;
-            let total = 0;
-            state.products.forEach(element => {
-                amount += element.itemAmount;
-                total += element.itemAmount * element.item.price;
-            });
-            state.amount = amount;
-            state.total = total;
-            updateLocal();
-        },
+
         updateLocal: (state) => {
             localStorage.setItem("basket", JSON.stringify(state));
             console.log(state);

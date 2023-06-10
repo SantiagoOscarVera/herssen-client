@@ -11,6 +11,7 @@ const BasketProduct = () => {
                         {products.map((item, i) =>
                             <Product
                                 key={new Date().getTime + Math.random} // forma de darle un key dinamico al producto
+                                id={item.id}
                                 name={item.name}
                                 price={item.price}
                                 image={item.image}
