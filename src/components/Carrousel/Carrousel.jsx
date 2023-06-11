@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import { Button } from 'primereact/button';
+import React, { useState, useEffect, useRef } from 'react';
+import { useEventListener } from 'primereact/hooks';
 import { Carousel } from 'primereact/carousel';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../redux/store/shopping/basketSlices';
-import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
 import { getDetailItem } from '../../redux/store/detail/detailSlice';
 
 const Carrousel = ({ product }) => {
@@ -33,35 +31,56 @@ const Carrousel = ({ product }) => {
 
     const productTemplate = (product) => {
 
-        const handleFavorite = () => {
-            dispatch(addFavorite(product))
-        }
+        const [hover, setHover] = useState(false);
+        const elementRef = useRef(null);
 
-        const handleAddBasket = () => {
-            dispatch(addItem(product));
-        }
+        const classNameHover = 'absolute bottom-0 bg-slate-300 bg-opacity-30 text-opacity-30 tex w-full rounded-b-xl text-slate-700 p-3 flex justify-between items-center';
+        const classNameNonHover = 'absolute bottom-0 bg-slate-300 bg-opacity-90 w-full rounded-b-xl text-slate-700 p-3 flex justify-between items-center';
+
+        const [bindMouseEnterListener, unbindMouseEnterListener] = useEventListener({
+            target: elementRef,
+            type: 'mouseenter',
+            listener: () => {
+                setHover(true);
+            }
+        });
+
+        const [bindMouseLeaveListener, unbindMouseLeaveListener] = useEventListener({
+            target: elementRef,
+            type: 'mouseleave',
+            listener: () => {
+                setHover(false);
+            }
+        });
+
+        useEffect(() => {
+            bindMouseEnterListener();
+            bindMouseLeaveListener();
+
+            return () => {
+                unbindMouseEnterListener();
+                unbindMouseLeaveListener();
+            };
+        }, [bindMouseEnterListener, bindMouseLeaveListener, unbindMouseEnterListener, unbindMouseLeaveListener]);
+
+
+       
 
         const handleDetail = () => {
             dispatch(getDetailItem(product.id))
         }
 
         return (
-            <Link to={`/marketplace/${product.id}`} onClick={handleDetail}>
-                <div className='flex justify-center p-4'>
-                    <div className='flex flex-col duration-300 hover:-translate-y-1 '>
-                        <div>
-                            <img src={"https://lh3.googleusercontent.com/lSPcRd7JuGf4uJEGIruV_rothudtLMqoWSl3OEFeRe30Ag3429987e4Bcib3ZjfvvLgaVOnz_1zpTXdWWcmyFAgFzd8iQcHVS-VMhqkHhA"} alt={product.name} className="rounded-t-2xl h-40" />
-                        </div>
-                        <div className='text-black bg-white rounded-b-2xl flex flex-col p-4'>
-                            <div className='flex justify-between pb-2 border-b border-gray-300'>
-                                <h4 className="font-medium">{product.name}</h4>
-                                <h6 className="pr-3">${product.price}</h6>
+            <Link to={`/marketplace/${product.id}`} onClick={handleDetail} >
+                <div className='flex justify-center p-4 ' ref={elementRef}>
+                    <div className='flex flex-col duration-300 hover:-translate-y-1 relative'>
+                        <img src={"https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000"} alt={product.name} className='rounded-xl border border-white' />
+                        <div className={hover ? classNameHover : classNameNonHover}>
+                            <div>
+                                <h2 className='font-medium '>{product.name}</h2>
+                                <h4 className=' text-xs'>{product.artist}</h4>
                             </div>
-                            <div className=" flex justify-between pt-2">
-                                <Button icon="pi pi-search" size='small'/>
-                                <Button icon="pi pi-star-fill" size='small' onClick={handleFavorite} disabled={userData.type !== 'buyer'}/>
-                                <Button icon="pi pi-cart-plus" size='small' onClick ={handleAddBasket} disabled={userData.type !== 'buyer'}/>
-                            </div>
+                            <p className='font-medium'>{product.price}USD</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +90,7 @@ const Carrousel = ({ product }) => {
 
     return (
         <div>
-            <Carousel value={product} numVisible={6} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='p-4' />
+            <Carousel value={product} numVisible={5} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='p-4' />
         </div>
     )
 }
