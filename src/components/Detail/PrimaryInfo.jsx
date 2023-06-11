@@ -1,8 +1,22 @@
 
 import React from 'react'
 import { Button } from 'primereact/button'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux/store/shopping/basketSlices';
+import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
 
 const PrimaryInfo = ({ detail }) => {
+
+    const dispatch = useDispatch();
+
+    const handleFavorite = () => {
+        dispatch(addFavorite(detail))
+    }
+
+    const handleAddBasket = () => {
+        dispatch(addItem(detail));
+    }
+
     return (
         <div className='flex gap-10 mt-10'>
             <div className='border border-violet-300 rounded-xl'>
@@ -29,8 +43,9 @@ const PrimaryInfo = ({ detail }) => {
                 </div>
 
                 <div className="p-buttonset w-72 flex justify-center">
-                    <Button label="Buy Now" className='w-4/5' />
-                    <Button icon="pi pi-heart" className='w-1/5' />
+                    <Button label="Buy Now" className='w-3/5' />
+                    <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite}/>
+                    <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket}/>
                 </div>
             </div>
         </div>
