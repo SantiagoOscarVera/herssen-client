@@ -58,10 +58,9 @@ const Artist = () => {
 
   return (
     <div ref={cardRef} className="card" style={{ width: '24%', height: '24%', boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)', }}>
-      <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" 
-      style={{
-        
-      }}/>
+      <a href="/artist">
+    <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" style={{}} />
+  </a>
       <Link
         to="/artist"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
@@ -95,36 +94,44 @@ const Jawerly = () => {
 
   return (
     <div
-      ref={cardRef}
-      className="card"
+  ref={cardRef}
+  className="card"
+  style={{
+    width: '24%',
+    paddingTop: '2%',
+    backgroundImage: 'url("https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    position: 'relative',
+    boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
+  }}
+>
+  <a href="/jewelry">
+    <div
       style={{
-        width: '24%',
-        paddingTop: '2%',
-        backgroundImage:
-          'url("https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        position: 'relative',
-        boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
+        width: '100%',
+        height: '100%',
+        cursor: 'pointer',
       }}
-    >
-      <Link
-        to="/artist"
-        className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
-        style={{
-          position: 'absolute',
-          top: '115%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          textDecoration: 'none',
-          backgroundColor: 'transparent',
-          border: 'none',
-        }}
-      >
-        Jawerly
-      </Link>
-    </div>
+    ></div>
+  </a>
+  <Link
+    to="/jewelry"
+    className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
+    style={{
+      position: 'absolute',
+      top: '115%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      textDecoration: 'none',
+      backgroundColor: 'transparent',
+      border: 'none',
+    }}
+  >
+    Jewelry
+  </Link>
+</div>
   );
 };
 
@@ -156,8 +163,17 @@ const Collector = () => {
         boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
       }}
     >
+        <a href="/collector">
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        cursor: 'pointer',
+      }}
+    ></div>
+  </a>
       <Link
-        to="/artist"
+        to="/collector"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
         style={{
           position: 'absolute',
@@ -203,8 +219,17 @@ const Buyer = () => {
         boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
       }}
     >
+        <a href="/buyer/code">
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        cursor: 'pointer',
+      }}
+    ></div>
+  </a>
       <Link
-        to="/artist"
+        to="/buyer/code"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
         style={{
           position: 'absolute',
