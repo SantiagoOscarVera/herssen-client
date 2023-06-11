@@ -12,7 +12,7 @@ function CollectionContainer() {
         <div className='flex flex-wrap w-4/6 gap-4 justify-center'>
             {
                 product.map(element => <Card
-                id={element.id}
+                    id={element.id}
                     name={element.name}
                     image="https://picsum.photos/200/200"
                     artist={element.artist}
