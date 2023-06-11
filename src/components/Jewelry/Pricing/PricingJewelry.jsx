@@ -31,10 +31,10 @@ const PricingJewelry = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')",  height:"1%" }}>
       <Layout main="h-full max-w-screen-xl flex m-auto">
-        <div className="flex flex-col justify-center items-center bg-white min-h-screen w-full mx-auto">
-          <div className="max-w-7xl px-6 lg:px-8 ">
+        <div className="flex flex-col justify-center items-center  min-h-screen w-full mx-auto">
+          <div className="max-w-7xl px-6 lg:px-8 " style={{ marginTop: "-9%" }}>
             <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-10 sm:mb-10 lg:mx-0 lg:flex lg:max-w-none">
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center py-5">
