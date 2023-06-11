@@ -6,16 +6,23 @@ import CarrouselContainer from './CarrouselContainer/CarrouselContainer';
 
 function MarketPlace() {
 
-/*   const ROUTES = {
-    item: "/artist/dashboard/item",
-    collection: "/artist/dashboard/collection",
-    sales: "/artist/dashboard/sales"
-  } */
+  /*   const ROUTES = {
+      item: "/artist/dashboard/item",
+      collection: "/artist/dashboard/collection",
+      sales: "/artist/dashboard/sales"
+    } */
 
   return (
-    <Layout> 
-      <Filters/>
-      <CarrouselContainer/>
+    <Layout>
+      <Filters />
+      <section className='flex flex-col '>
+        <h2 className='ml-20 text-xl'>Type of Art</h2>
+        <CarrouselContainer />
+      </section>
+      <section>
+        <h2 className='ml-20 text-xl'>Type of Art</h2>
+        <CarrouselContainer />
+      </section>
     </Layout>
   )
 }
