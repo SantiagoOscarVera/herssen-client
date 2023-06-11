@@ -44,7 +44,7 @@ class Hover3D {
   }
 }
 
-const CardHome = () => {
+const Artist = () => {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -57,14 +57,17 @@ const CardHome = () => {
   }, []);
 
   return (
-    <div ref={cardRef} className="card" style={{ width: '24%', height: '24%' }}>
-      <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" />
+    <div ref={cardRef} className="card" style={{ width: '24%', height: '24%', boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)', }}>
+      <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" 
+      style={{
+        
+      }}/>
       <Link
         to="/artist"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
         style={{
           position: 'absolute',
-          top: '50%',
+          top: '115%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           textDecoration: 'none',
@@ -91,14 +94,27 @@ const Jawerly = () => {
   }, []);
 
   return (
-    <div ref={cardRef} className="card" style={{ width: '24%', height: '24%' }}>
-      <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" />
+    <div
+      ref={cardRef}
+      className="card"
+      style={{
+        width: '24%',
+        paddingTop: '2%',
+        backgroundImage:
+          'url("https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
+      }}
+    >
       <Link
-        to="/jawerly"
+        to="/artist"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
         style={{
           position: 'absolute',
-          top: '50%',
+          top: '115%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           textDecoration: 'none',
@@ -125,14 +141,27 @@ const Collector = () => {
   }, []);
 
   return (
-    <div ref={cardRef} className="card" style={{ width: '24%', height: '24%' }}>
-      <img src="https://vulcanpost.com/wp-content/uploads/2022/08/nft-1.jpeg" alt="3D Card Image" />
+    <div
+      ref={cardRef}
+      className="card"
+      style={{
+        width: '24%',
+        paddingTop: '2%',
+        backgroundImage:
+          'url("https://vulcanpost.com/wp-content/uploads/2022/08/nft-1.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
+      }}
+    >
       <Link
         to="/artist"
         className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
         style={{
           position: 'absolute',
-          top: '50%',
+          top: '115%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           textDecoration: 'none',
@@ -159,31 +188,45 @@ const Buyer = () => {
     }, []);
   
     return (
-      <div ref={cardRef} className="card" style={{ width: '24%', height: '10%' }}>
-        <img src="https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png" alt="3D Card Image" />
-        <Link
-          to="/artist"
-          className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            textDecoration: 'none',
-            backgroundColor: 'transparent',
-            border: 'none',
-          }}
-        >
-          Buyer
-        </Link>
-      </div>
+        <div
+      ref={cardRef}
+      className="card"
+      style={{
+        width: '24%',
+        paddingTop: '2%',
+        backgroundImage:
+          'url("https://altcoinoracle.com/wp-content/uploads/2022/10/dolce-and-gabbana-dgfamily-nft-community-gallery-02.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        boxShadow: '0 15px 6px rgba(0, 0, 0, 0.2)',
+      }}
+    >
+      <Link
+        to="/artist"
+        className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex justify-center items-center"
+        style={{
+          position: 'absolute',
+          top: '115%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textDecoration: 'none',
+          backgroundColor: 'transparent',
+          border: 'none',
+        }}
+      >
+        Buyer
+      </Link>
+    </div>
+      
     );
   };
 
 const CardRow = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <CardHome />
+      <Artist />
       <Jawerly />
       <Collector />
       <Buyer />
