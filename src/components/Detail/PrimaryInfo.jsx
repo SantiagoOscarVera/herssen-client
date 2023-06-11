@@ -4,7 +4,7 @@ import { Button } from 'primereact/button'
 
 const PrimaryInfo = ({ detail }) => {
     return (
-        <>
+        <div className='flex gap-10 mt-10'>
             <div className='border border-violet-300 rounded-xl'>
                 <img src="https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000" alt={detail.name} className='h-96 rounded-xl' />
             </div>
@@ -33,7 +33,7 @@ const PrimaryInfo = ({ detail }) => {
                     <Button icon="pi pi-heart" className='w-1/5' />
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

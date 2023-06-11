@@ -3,16 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
 }
 
-body{
+body {
   background-color: rgb(31, 31, 31);
-  
+
   margin-left: auto;
   margin-right: auto;
   color: azure;
+}
+
+
+.fieldsetDetail .p-fieldset .p-fieldset-legend {
+  background-color: #6366F1;
+  border: none;
+}
+
+.fieldsetDetail .p-fieldset-legend-text {
+  color: white;
+}
+
+.fieldsetDetail .p-fieldset-content {
+  background-color: rgb(75, 75, 75);
+  ;
+}
+
+
+.fieldsetDetail .p-fieldset{
+  background: #6366F1 !important;
+  border: #6366F1 1px solid;
 }
