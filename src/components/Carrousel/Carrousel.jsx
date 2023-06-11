@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/store/shopping/basketSlices';
 import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
+import { getDetailItem } from '../../redux/store/detail/detailSlice';
 
 const Carrousel = ({ product }) => {
 
@@ -40,8 +41,12 @@ const Carrousel = ({ product }) => {
             dispatch(addItem(product));
         }
 
+        const handleDetail = () => {
+            dispatch(getDetailItem(product.id))
+        }
+
         return (
-            <Link to={`/marketplace/${product.id}`}>
+            <Link to={`/marketplace/${product.id}`} onClick={handleDetail}>
                 <div className='flex justify-center p-4'>
                     <div className='flex flex-col duration-300 hover:-translate-y-1 '>
                         <div>
