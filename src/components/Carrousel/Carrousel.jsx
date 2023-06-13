@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useEventListener } from 'primereact/hooks';
+import React, { useState } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -30,40 +29,6 @@ const Carrousel = ({ product }) => {
 
 
     const productTemplate = (product) => {
-
-        const [hover, setHover] = useState(false);
-        const elementRef = useRef(null);
-
-        const classNameHover = 'absolute bottom-0 bg-slate-300 bg-opacity-30 text-opacity-30 tex w-full rounded-b-xl text-slate-700 p-3 flex justify-between items-center';
-        const classNameNonHover = 'absolute bottom-0 bg-slate-300 bg-opacity-90 w-full rounded-b-xl text-slate-700 p-3 flex justify-between items-center';
-
-        const [bindMouseEnterListener, unbindMouseEnterListener] = useEventListener({
-            target: elementRef,
-            type: 'mouseenter',
-            listener: () => {
-                setHover(true);
-            }
-        });
-
-        const [bindMouseLeaveListener, unbindMouseLeaveListener] = useEventListener({
-            target: elementRef,
-            type: 'mouseleave',
-            listener: () => {
-                setHover(false);
-            }
-        });
-
-        useEffect(() => {
-            bindMouseEnterListener();
-            bindMouseLeaveListener();
-
-            return () => {
-                unbindMouseEnterListener();
-                unbindMouseLeaveListener();
-            };
-        }, [bindMouseEnterListener, bindMouseLeaveListener, unbindMouseEnterListener, unbindMouseLeaveListener]);
-
-
        
 
         const handleDetail = () => {
@@ -72,15 +37,15 @@ const Carrousel = ({ product }) => {
 
         return (
             <Link to={`/marketplace/${product.id}`} onClick={handleDetail} >
-                <div className='flex justify-center p-4 ' ref={elementRef}>
-                    <div className='flex flex-col duration-300 hover:-translate-y-1 relative'>
-                        <img src={"https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000"} alt={product.name} className='rounded-xl border border-white' />
-                        <div className={hover ? classNameHover : classNameNonHover}>
+                <div className='flex justify-center p-2 my-10 '>
+                    <div className='flex flex-col duration-300 hover:-translate-y-2 relative shadow-lg shadow-gray-300 rounded-xl m-1 hover:shadow'>
+                        <img src={"https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000"} alt={product.name} className='rounded-xl border border-gray-200' />
+                        <div className="absolute bottom-0 bg-gray-200 bg-opacity-90 w-full rounded-b-xl text-gray-800 p-3 flex justify-between items-center duration-300 hover:bg-opacity-60">
                             <div>
                                 <h2 className='font-medium '>{product.name}</h2>
                                 <h4 className=' text-xs'>{product.artist}</h4>
                             </div>
-                            <p className='font-medium'>{product.price}USD</p>
+                            <p className='font-medium'>${product.price}USD</p>
                         </div>
                     </div>
                 </div>
