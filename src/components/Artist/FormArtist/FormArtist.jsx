@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import LoginButton from "../../../Auth0/LoginButton";
+import { getArtistTest } from "../../../redux/store/user/userSlice";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -109,7 +110,7 @@ const SignUp = () => {
                 <Link to="/artist/login" className="text-teal-500 hover:text-teal-300">
                  LogIn
                 </Link>
-                <LoginButton/>
+                <LoginButton handleUser={getArtistTest}/>
               </div>
             </Form>
           </Formik>
