@@ -3,8 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { getBuyerTest } from "../../../redux/store/user/userSlice";
+
 
 const LogInBuyer = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
   const initialValues = {
     email: '',
@@ -16,6 +20,15 @@ const LogInBuyer = () => {
     email: Yup.string().email('Email invalido').required('Se requiere un email'),
     password: Yup.string().required('Se requiere una contraseña'),
   });
+
+  const handleSubmit = (values, { setSubmitting }) => {
+     dispatch(getBuyerTest()); 
+     navigate("/buyer/dashboard")
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://altcoinoracle.com/wp-content/uploads/2022/10/dolce-and-gabbana-dgfamily-nft-community-gallery-02-1024x1024.jpg')", width: "100vw" }}>
@@ -34,7 +47,7 @@ const LogInBuyer = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            
+            onSubmit={handleSubmit}
           >
             <Form>
               <div className="mb-4 text-lg">
@@ -66,7 +79,6 @@ const LogInBuyer = () => {
                 >
                   Register
                 </button>
-                
               </div>
               <Link to ="/buyer/dashboard" className="mt-8 flex justify-center text-lg text-black">
                 <button
