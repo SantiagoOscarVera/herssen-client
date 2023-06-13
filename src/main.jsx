@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Auth0Provider
       domain="dev-iaerqb27ws2nj4yh.us.auth0.com"
       clientId="5rlO1ztuBafmy9Cyin62epnn4cHjl6pi"
-      redirectUri= "https://herssen.netlify.app/artist/form"
+      redirectUri= "https://herssen.netlify.app/marketplace"
     >
     <BrowserRouter>
       <Provider store={store}>
