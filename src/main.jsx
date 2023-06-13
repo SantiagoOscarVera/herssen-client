@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Auth0Provider
       domain="dev-iaerqb27ws2nj4yh.us.auth0.com"
       clientId="5rlO1ztuBafmy9Cyin62epnn4cHjl6pi"
-      /* redirectUri={window.location.origin} */
+      redirectUri={window.location.origin + "/artist/form"}
     >
     <BrowserRouter>
       <Provider store={store}>
