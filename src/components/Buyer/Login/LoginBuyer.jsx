@@ -39,7 +39,7 @@ const LogInBuyer = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={handleSubmit}
+            
           >
             <Form>
               <div className="mb-4 text-lg">
