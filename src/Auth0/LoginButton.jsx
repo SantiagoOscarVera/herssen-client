@@ -17,8 +17,9 @@ const LoginButton = ({handleUser}) => {
   };
 
   return <button
-    style={{ backgroundColor: "#065fd4", color: "black" }}
-    onClick={handleSubmit}>Login
+    className="rounded-3xl bg-slate-900 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-teal-600"
+    onClick={handleSubmit}> 
+    Login Auth0
   </button>;
 };
 

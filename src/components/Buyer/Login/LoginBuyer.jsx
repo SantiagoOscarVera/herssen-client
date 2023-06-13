@@ -3,13 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { getBuyerTest } from "../../../redux/store/user/userSlice";
-import LoginButton from "../../../Auth0/LoginButton";
-
 
 const LogInBuyer = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
   const initialValues = {
     email: '',
@@ -71,7 +66,7 @@ const LogInBuyer = () => {
                 >
                   Register
                 </button>
-                <LoginButton handleUser={getBuyerTest} />
+                
               </div>
               <Link to ="/buyer/dashboard" className="mt-8 flex justify-center text-lg text-black">
                 <button
