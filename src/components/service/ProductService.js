@@ -6,7 +6,7 @@ export const ProductService = {
                 artist: 'f230fh0g3',
                 name: 'Bamboo Watch',
                 description: 'Product Description',
-                image: 'bamboo-watch.jpg',
+                image: 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg',
                 price: 65,
                 category: 'Contemporary Art',
                 quantity: 24,
