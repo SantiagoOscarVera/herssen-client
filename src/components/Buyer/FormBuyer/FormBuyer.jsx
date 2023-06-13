@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-/* import { createArtistAsync } from '../../../redux/store/artist/artistSlice'; */
+import LoginButton from "../../../Auth0/LoginButton";
+import { getBuyerTest } from "../../../redux/store/user/userSlice";
 
 const SignUpBuyer = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const SignUpBuyer = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    /* dispatch(createArtistAsync(values)); */
+  
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -103,6 +104,10 @@ const SignUpBuyer = () => {
                 >
                   Register
                 </button>
+              </div>
+
+              <div className="mt-8 flex justify-center text-lg text-black">
+              <LoginButton handleUser={getBuyerTest}/>
               </div>
 
               <div className="mt-4 flex justify-center text-lg text-gray-300">

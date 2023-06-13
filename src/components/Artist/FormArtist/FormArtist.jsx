@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import LoginButton from "../../../Auth0/LoginButton";
+import { getArtistTest } from "../../../redux/store/user/userSlice";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -103,12 +105,16 @@ const SignUp = () => {
                   Register
                 </button>
               </div>
+
+              <div className="mt-8 flex justify-center text-lg text-black">
+              <LoginButton handleUser={getArtistTest}/>
+              </div>
+              
               <div className="mt-4 flex justify-center text-lg text-gray-300">
                 <p className="mr-2">¿Ya tienes una cuenta?</p>
                 <Link to="/artist/login" className="text-teal-500 hover:text-teal-300">
                  LogIn
                 </Link>
-                
               </div>
             </Form>
           </Formik>
