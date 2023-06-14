@@ -7,6 +7,8 @@ import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
 
 const PrimaryInfo = ({ detail }) => {
 
+    const userData = JSON.parse(localStorage.getItem("userData"))
+    console.log(userData);
     const dispatch = useDispatch();
 
     const handleFavorite = () => {
@@ -41,12 +43,14 @@ const PrimaryInfo = ({ detail }) => {
                     </div>
 
                 </div>
-
-                <div className="p-buttonset w-72 flex justify-center">
-                    <Button label="Buy Now" className='w-3/5' />
-                    <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite}/>
-                    <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket}/>
-                </div>
+                {
+                    userData.type !== "buyer" ? null :
+                        <div className="p-buttonset w-72 flex justify-center">
+                            <Button label="Buy Now" className='w-3/5' />
+                            <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite} />
+                            <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket} />
+                        </div>
+                }
             </div>
         </div>
 
