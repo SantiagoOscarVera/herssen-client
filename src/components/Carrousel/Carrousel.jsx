@@ -29,7 +29,7 @@ const Carrousel = ({ product }) => {
 
 
     const productTemplate = (product) => {
-       
+
 
         const handleDetail = () => {
             dispatch(getDetailItem(product.id))
@@ -37,8 +37,8 @@ const Carrousel = ({ product }) => {
 
         return (
             <Link to={`/marketplace/${product.id}`} onClick={handleDetail} >
-                <div className='flex justify-center p-2 my-10 '>
-                    <div className='flex flex-col duration-300 hover:-translate-y-2 relative shadow-lg shadow-gray-300 rounded-xl m-1 hover:shadow'>
+                <div className='flex justify-center p-2 my-3 '>
+                    <div className='flex flex-col duration-300 hover:-translate-y-2 relative shadow-lg shadow-gray-300 rounded-xl m-1 hover:shadow-xl'>
                         <img src={"https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000"} alt={product.name} className='rounded-xl border border-gray-200' />
                         <div className="absolute bottom-0 bg-gray-200 bg-opacity-90 w-full rounded-b-xl text-gray-800 p-3 flex justify-between items-center duration-300 hover:bg-opacity-60">
                             <div>
