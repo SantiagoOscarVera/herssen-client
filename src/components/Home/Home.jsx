@@ -13,7 +13,7 @@ function Home() {
                 className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                 style={{ backgroundImage: "url('https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png')" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-950 to-gray-400 opacity-80 rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                 <span
                   className="absolute inset-0 flex items-center justify-center text-white font-bold"
                   style={{
@@ -31,7 +31,7 @@ function Home() {
                 className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                 style={{ backgroundImage: "url('https://altcoinoracle.com/wp-content/uploads/2022/10/dolce-and-gabbana-dgfamily-nft-community-gallery-02.jpg')" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-950 to-gray-400 opacity-80 rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                 <span
                   className="absolute inset-0 flex items-center justify-center text-white font-bold"
                   style={{
@@ -49,7 +49,7 @@ function Home() {
                 className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                 style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-950 to-gray-400 opacity-80 rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                 <span
                   className="absolute inset-0 flex items-center justify-center text-white font-bold"
                   style={{
@@ -67,7 +67,7 @@ function Home() {
                 className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                 style={{ backgroundImage: "url('https://vulcanpost.com/wp-content/uploads/2022/08/nft-1.jpeg')" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-950 to-gray-400 opacity-80 rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                 <span
                   className="absolute inset-0 flex items-center justify-center text-white font-bold"
                   style={{
