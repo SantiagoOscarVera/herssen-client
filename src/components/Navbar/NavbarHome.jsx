@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NavBarHome() {
 
     return (
-        <div className='flex justify-between mx-10 py-5'>
+        <div className='flex justify-between mx-10 my-5 border rounded-full shadow-xl bg-gray-900 text-slate-100'>
             <div className="flex items-center ml-2">
                 <Link to="/">
                     <div className="flex items-center">
