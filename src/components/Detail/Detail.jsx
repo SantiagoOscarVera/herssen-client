@@ -6,9 +6,10 @@ import Description from './Description';
 
 function Detail() {
     const { detail } = useSelector(state => state.detail);
-    console.log(detail);
     return (
-        <Layout main={"max-w-screen-xl flex flex-col items-center justify-center mx-auto gap-10"}>
+
+        // "max-w-screen-xl flex flex-col items-center justify-center mx-auto gap-10"
+        <Layout main={"flex flex-col items-center justify-center 2xl:gap-10"}>
             <PrimaryInfo detail={detail} />
             <Description detail={detail} />
         </Layout>
