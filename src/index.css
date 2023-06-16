@@ -19,7 +19,7 @@ body {
 
 
 .fieldsetDetail .p-fieldset .p-fieldset-legend {
-  background-color: #6366F1;
+  background-color: rgb(107 114 128);
   border: none;
 }
 
@@ -28,12 +28,12 @@ body {
 }
 
 .fieldsetDetail .p-fieldset-content {
-  background-color: rgb(75, 75, 75);
+  background-color: whitesmoke;
   ;
 }
 
 
 .fieldsetDetail .p-fieldset{
-  background: #6366F1 !important;
-  border: #6366F1 1px solid;
+  background: rgb(107 114 128) !important;
+  border: rgb(107 114 128) 1px solid;
 }
