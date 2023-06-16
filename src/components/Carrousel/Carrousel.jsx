@@ -11,12 +11,12 @@ const Carrousel = ({ product }) => {
 
     const responsiveOptions = [
         {
-            breakpoint: '1024px',
+            breakpoint: '1300px',
             numVisible: 3,
             numScroll: 3
         },
         {
-            breakpoint: '1400px',
+            breakpoint: '1600px',
             numVisible: 5,
             numScroll: 3
         },
