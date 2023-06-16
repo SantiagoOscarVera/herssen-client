@@ -20,13 +20,13 @@ const PrimaryInfo = ({ detail }) => {
     }
 
     return (
-        <div className='gap-10 mt-10 2xl:flex'>
+        <div className='gap-10 mt-10 xl:flex'>
             <div className='border border-gray-500 rounded-xl'>
                 <img src="https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000" alt={detail.name} className='h-96 rounded-xl' />
             </div>
             <div className='flex flex-col justify-between py-4 gap-4'>
 
-                <div className='flex flex-col gap-2 2xl:gap-4'>
+                <div className='flex flex-col gap-2 xl:gap-4'>
 
                     <h4 className='text-sm text-gray-400 px-1'>collections name</h4>
                     <h1 className='text-3xl font-medium px-1'>{detail.name}</h1>
@@ -45,7 +45,7 @@ const PrimaryInfo = ({ detail }) => {
                 </div>
                 {
                     userData.type !== "buyer" ? null :
-                        <div className="p-buttonset 2xl:w-72 flex justify-center border-b border-gray-300 pb-4">
+                        <div className="p-buttonset xl:w-72 flex justify-center border-b border-gray-300 pb-4">
                             <Button label="Buy Now" className='w-3/5' size='large'/>
                             <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite} size='large'/>
                             <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket} size='large'/>

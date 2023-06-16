@@ -9,7 +9,7 @@ function Detail() {
     return (
 
         // "max-w-screen-xl flex flex-col items-center justify-center mx-auto gap-10"
-        <Layout main={"flex flex-col items-center justify-center 2xl:gap-10"}>
+        <Layout main={"flex flex-col items-center justify-center lg:gap-10"}>
             <PrimaryInfo detail={detail} />
             <Description detail={detail} />
         </Layout>
