@@ -70,7 +70,7 @@ function NavBar() {
                         userData.type === "buyer" ?
                             <p>
                                 <Link to="/marketplace/shopping">
-                                   <span className='pi pi-shopping-cart text-2xl'></span>
+                                    <span className='pi pi-shopping-cart text-2xl'></span>
                                 </Link>
                                 <span className='text-xs align-top bg-indigo-600 text-white rounded-full px-2 py-0 mx-1'>
                                     {amount}
@@ -86,27 +86,20 @@ function NavBar() {
                     </li>
 
                     <li
-                        ref={menuRef}
-                        className={`relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 ${showButtons ? 'bg-indigo-600' : ''}`}
-                        onClick={toggleButtons}
+                        className='relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 '
                     >
-                        <button /* to={"/"} */>Usuario</button>
-                        {showButtons && (
-                            <div className="absolute left-0 mt-2 py-2 bg-white rounded shadow-lg flex flex-col items-center">
-                                {/* Aquí puedes colocar tus botones */}
-                                <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Perfil</button>
-                                {
-                                    userData.type === "buyer" ?
-                                        <Link to="/buyer/dashboard/favourites">
-                                            <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Mis Favoritos</button>
-                                        </Link> : null
-                                }
-                                <Link to="/">
-                                    <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Cerrar Sesion</button>
+                        {
+                            userData.type === "buyer" ?
+                                <Link to="/buyer/dashboard/favourites">
+                                    My favs
                                 </Link>
-                            </div>
-
-                        )}
+                                : null
+                        }
+                    </li>
+                    <li>
+                        <Link to="/">
+                            <button className="block text-xl font font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white">Log Out</button>
+                        </Link>
                     </li>
 
                 </ul>
@@ -122,7 +115,7 @@ function NavBar() {
                         userData.type === "buyer" ?
                             <p>
                                 <Link to="/marketplace/shopping">
-                                <span className='pi pi-shopping-cart text-xl'></span>
+                                    <span className='pi pi-shopping-cart text-xl'></span>
                                 </Link>
                                 <span className='text-xs align-top bg-indigo-600 text-white rounded-full px-2 py-0 mx-1'>
                                     {amount}
