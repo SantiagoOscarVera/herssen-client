@@ -20,6 +20,12 @@ const Carrousel = ({ product }) => {
             numVisible: 5,
             numScroll: 3
         },
+        {
+            breakpoint: '500px',
+            numVisible: 1,
+            numScroll: 1
+        },
+
     ];
 
 
