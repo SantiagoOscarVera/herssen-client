@@ -55,7 +55,7 @@ const Carrousel = ({ product }) => {
 
     return (
         <div>
-            <Carousel value={product} numVisible={5} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='p-4' />
+            <Carousel value={product} numVisible={5} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} className='2xl:p-4' />
         </div>
     )
 }
