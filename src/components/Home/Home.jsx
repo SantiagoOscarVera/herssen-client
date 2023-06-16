@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import Layout from '../Layouts/LayoutCliente';
 import PricingArtist from "../Artist/Pricing/PricingArtist";
+import PricingJewelry from "../Jewelry/Pricing/PricingJewelry";
+import PricingCollector from "../Collector/Pricing/PricingCollector";
 
 function Home() {
   const scrollToImages = () => {
@@ -26,31 +28,45 @@ function Home() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Agrega esta línea para ocultar la barra de desplazamiento en el cuerpo
+    document.body.style.overflow = 'hidden'; 
   };
-
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = 'auto'; // Restablece el valor de overflow para mostrar la barra de desplazamiento en el cuerpo nuevamente
+    document.body.style.overflow = 'auto'; 
   };
 
   const [isModalOpenJewelry, setIsModalOpenJewelry] = useState(false);
 
   const openModalJewelry = () => {
     setIsModalOpenJewelry(true);
-    document.body.style.overflow = 'hidden'; // Agrega esta línea para ocultar la barra de desplazamiento en el cuerpo
+    document.body.style.overflow = 'hidden'; 
   };
 
   const closeModalJewelry = () => {
     setIsModalOpenJewelry(false);
-    document.body.style.overflow = 'auto'; // Restablece el valor de overflow para mostrar la barra de desplazamiento en el cuerpo nuevamente
+    document.body.style.overflow = 'auto'; 
   };
+
+  const [isModalOpenCollector, setIsModalOpenCollector] = useState(false);
+
+  const openModalCollector = () => {
+    setIsModalOpenCollector(true);
+    document.body.style.overflow = 'hidden'; 
+  };
+
+  const closeModalCollector = () => {
+    setIsModalOpenCollector(false);
+    document.body.style.overflow = 'auto'; 
+  };
+
+  
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         closeModal();
         closeModalJewelry();
+        closeModalCollector()
       }
     };
 
@@ -137,10 +153,11 @@ function Home() {
                   </span>
                 </div>
               </Link>
-              <Link to="/collector">
+              <Link>
                 <div
                   className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://vulcanpost.com/wp-content/uploads/2022/08/nft-1.jpeg')" }}
+                  onClick={openModalCollector}
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                   <span
@@ -188,7 +205,23 @@ function Home() {
             <div 
             ref={modalRef}
             className="inline-block align-bottom  rounded-lg text-left overflow-hidden  transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <PricingArtist/>
+              <PricingJewelry/>
+            </div>
+          </div>
+        </div>
+      )}
+      {isModalOpenCollector && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 text-center">
+            <div className="fixed inset-0 transition-opacity">
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+            &#8203;
+            <div 
+            ref={modalRef}
+            className="inline-block align-bottom  rounded-lg text-left overflow-hidden  transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <PricingCollector/>
             </div>
           </div>
         </div>
