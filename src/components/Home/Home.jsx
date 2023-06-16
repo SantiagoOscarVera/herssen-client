@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import Layout from '../Layouts/LayoutCliente';
+import PricingArtist from "../Artist/Pricing/PricingArtist";
 
 function Home() {
   const scrollToImages = () => {
@@ -18,6 +19,46 @@ function Home() {
     if (imagesSectionRef.current) {
       setImagesSectionOffsetTop(imagesSectionRef.current.offsetTop);
     }
+  }, []);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Agrega esta línea para ocultar la barra de desplazamiento en el cuerpo
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'auto'; // Restablece el valor de overflow para mostrar la barra de desplazamiento en el cuerpo nuevamente
+  };
+
+  const [isModalOpenJewelry, setIsModalOpenJewelry] = useState(false);
+
+  const openModalJewelry = () => {
+    setIsModalOpenJewelry(true);
+    document.body.style.overflow = 'hidden'; // Agrega esta línea para ocultar la barra de desplazamiento en el cuerpo
+  };
+
+  const closeModalJewelry = () => {
+    setIsModalOpenJewelry(false);
+    document.body.style.overflow = 'auto'; // Restablece el valor de overflow para mostrar la barra de desplazamiento en el cuerpo nuevamente
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+        closeModalJewelry();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
   }, []);
 
   return (
@@ -40,10 +81,11 @@ function Home() {
 
             <div className="grid grid-cols-2 gap-8" ref={imagesSectionRef}>
 
-              <Link to="/artist">
+              <Link >
                 <div
                   className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png')" }}
+                  onClick={openModal}
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                   <span
@@ -76,10 +118,11 @@ function Home() {
                   </span>
                 </div>
               </Link>
-              <Link to="/jewelry">
+              <Link >
                 <div
                   className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')" }}
+                  onClick={openModalJewelry}
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
                   <span
@@ -117,7 +160,39 @@ function Home() {
         </div>
 
       </Layout>
-      {/* <div ref={imagesSectionRef}></div> */}
+      {/* modal */}
+      {isModalOpen && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 text-center">
+            <div className="fixed inset-0 transition-opacity">
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+            &#8203;
+            <div 
+            ref={modalRef}
+            className="inline-block align-bottom  rounded-lg text-left overflow-hidden  transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <PricingArtist/>
+            </div>
+          </div>
+        </div>
+      )}
+      {isModalOpenJewelry && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 text-center">
+            <div className="fixed inset-0 transition-opacity">
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+            &#8203;
+            <div 
+            ref={modalRef}
+            className="inline-block align-bottom  rounded-lg text-left overflow-hidden  transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <PricingArtist/>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
