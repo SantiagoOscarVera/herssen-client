@@ -67,7 +67,7 @@ const PricingCollector = () => {
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Fundamentals of NFTs & Blockchain technology
+                          Fundamentals of NFTs
                         </li>
                         <li className="flex gap-x-3">
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -83,10 +83,10 @@ const PricingCollector = () => {
                         </li>
                       </ul>
                     </div>
-                    <a  onClick={openModal}  className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">Subscribe as an Artist</a>
+                    <Link  /* onClick={openModal} */  to="/collector/login" className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">Subscribe as an Artist</Link>
                     <p className="mt-6 text-xs leading-5 text-white flex items-center justify-center gap-x-1">
                       Already have an account?
-                      <Link to="/artist/login">
+                      <Link to="/collector/login">
                       <button className="text-black bg-white hover:bg-white hover:text-black rounded-md px-2 py-2 text-xs font-medium">
                         Login
                       </button>

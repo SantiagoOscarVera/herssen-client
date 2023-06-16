@@ -83,10 +83,10 @@ const PricingJewelry = () => {
                         </li>
                       </ul>
                     </div>
-                    <a  onClick={openModal}  className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">Subscribe as an Artist</a>
+                    <Link  /* onClick={openModal} */  to="/jewelry/login" className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">Subscribe as an Artist</Link>
                     <p className="mt-6 text-xs leading-5 text-white flex items-center justify-center gap-x-1">
                       Already have an account?
-                      <Link to="/artist/login">
+                      <Link to="/jewelry/login">
                       <button className="text-black bg-white hover:bg-white hover:text-black rounded-md px-2 py-2 text-xs font-medium">
                         Login
                       </button>
