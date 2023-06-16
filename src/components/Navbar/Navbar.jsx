@@ -48,7 +48,7 @@ function NavBar() {
 
     // bg-gradient-to-r from-gray-700 to-gray-200 rounded-l-full 
     return (
-        <div className='flex justify-between 2xl:mx-10 2xl:my-5 2xl:border 2xl:rounded-full 2xl:px-20 h-20 shadow-xl bg-gray-700 text-slate-100 px-8'>
+        <div className='flex justify-between lg:mx-10 lg:my-5 lg:border lg:rounded-full lg:px-20 h-20 lg:h-auto shadow-xl bg-gray-700 text-slate-100 px-8'>
             <div className="flex items-center ">
                 <Link to="/marketplace">
                     <div className="flex items-center">
@@ -107,9 +107,9 @@ function NavBar() {
 
             </Sidebar>
 
-            <Button icon="pi pi-bars" onClick={() => setVisibleRight(true)} className='2xl:hidden' text size='large' />
+            <Button icon="pi pi-bars" onClick={() => setVisibleRight(true)} className='lg:hidden' text size='large' />
 
-            <div className='hidden 2xl:flex items-center '>
+            <div className='hidden lg:flex items-center '>
                 <ul className='flex gap-10'>
                     {
                         userData.type === "buyer" ?
