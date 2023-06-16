@@ -12,16 +12,16 @@ function BuyerDashboard() {
 
   return (
     <Layout>
-      <div className='flex  flex-col items-center justify-center'>
-        <h2>Dashboard</h2>
-        <div className='flex gap-5 items-center border border-white p-5'>
+      <div className='flex flex-col items-center justify-center'>
+        <h2 className='m-5 text-xl font-medium'>Dashboard</h2>
+        <div className='flex flex-col gap-5 items-center p-5'>
 
           <Link to={ROUTES.favourites}>
-            <Button name='favourites' label='My favourites Items' />
+            <Button name='favourites' label='My favourites Items' size='large' />
           </Link>
 
           <Link to={ROUTES.purchased}>
-            <Button name='purchased' label='Purchased Items' />
+            <Button name='purchased' label='Purchased Items' size='large'/>
           </Link>
           
         </div>
