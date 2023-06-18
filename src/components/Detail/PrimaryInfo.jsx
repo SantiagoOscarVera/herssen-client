@@ -7,6 +7,7 @@ import { addFavorite} from '../../redux/store/favorites/favoriteSlice';
 import Swal from 'sweetalert2';
 
 
+
 const PrimaryInfo = ({ detail }) => {
     
 
@@ -20,6 +21,19 @@ const PrimaryInfo = ({ detail }) => {
 
     const handleAddBasket = () => {
         dispatch(addItem(detail));
+        /* Swal.fire({
+            
+            title: 'El item se encuentra en el carrito',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        }); */
     }
 
     const handleInfo = () => {
@@ -31,6 +45,9 @@ const PrimaryInfo = ({ detail }) => {
             confirmButtonText: 'Entendido'
         });
     }
+    
+
+    
 
     return (
         <div className='gap-10 mt-10 xl:flex'>
@@ -60,7 +77,7 @@ const PrimaryInfo = ({ detail }) => {
                     userData.type !== "buyer" ? null :
                         <div className="p-buttonset xl:w-72 flex justify-center border-b border-gray-300 pb-4">
                             <Button label="Buy Now" className='w-3/5' size='large'  onClick={handleInfo}/>
-                            <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite} size='large'/>
+                            <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite}   size='large'/>
                             <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket} size='large'/>
                         </div>
                 }
