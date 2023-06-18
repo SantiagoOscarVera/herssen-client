@@ -138,7 +138,7 @@ const Favourites = () => {
     
     return (
         <Layout>
-            <div>
+            <div style={{ minHeight: '50vh' }}>
                 <Toast ref={toast} />
                 <div className="card">
 
