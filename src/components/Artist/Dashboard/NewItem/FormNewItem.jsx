@@ -157,7 +157,7 @@ const FormNewItem = () => {
                     </div>
 
                     <div className="flex justify-center mb-4">
-                        <Button type="button" label="Add Collection" onClick={handleNewCollection} />
+                        <Button className="p-button-secondary" type="button" label="Add Collection" onClick={handleNewCollection} />
                     </div>
                 </div>
 

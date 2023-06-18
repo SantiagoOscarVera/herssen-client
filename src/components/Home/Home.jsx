@@ -78,13 +78,13 @@ function Home() {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://st3.depositphotos.com/2034249/33541/i/450/depositphotos_335410596-stock-photo-black-texture-text-field-space.jpg')", height: "100vh" }}>
+    <div className="h-screen flex flex-col bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://st3.depositphotos.com/2034249/33541/i/450/depositphotos_335410596-stock-photo-black-texture-text-field-space.jpg')", height: "100vh", width: "100%" }}>
       <Layout main="h-full max-w-screen-xl flex m-auto">
         <div >
           <div className="flex items-center h-full justify-center">
             <div className='mb-12'>
-              <h2 className="text-7xl font-bold mb-12 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Private Marketplace</h2>
-              <h2 className="text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Exclusive art & Jewelry design</h2>
+              <h2 className="text-7xl sm:text-7xl font-bold mb-12 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Private Marketplace</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Exclusive Art & Jewelry design</h2>
               <div className="flex justify-center">
                 <button className="text-4xl text-white mt-10" onClick={scrollToImages}>
                   &#x2193;
@@ -93,13 +93,13 @@ function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-center items-center h-screen ">
 
-            <div className="grid grid-cols-2 gap-8" ref={imagesSectionRef}>
+            <div className="grid grid-cols-2 gap-8 " >
 
               <Link >
                 <div
-                  className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
+                  className="h-40 w-40 sm:h-60 sm:w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://thebluemanakin.com/wp-content/uploads/2022/09/NFT-moda.png')" }}
                   onClick={openModal}
                 >
@@ -118,7 +118,7 @@ function Home() {
               </Link>
               <Link to="buyer/code">
                 <div
-                  className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
+                  className="h-40 w-40 sm:h-60 sm:w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://altcoinoracle.com/wp-content/uploads/2022/10/dolce-and-gabbana-dgfamily-nft-community-gallery-02.jpg')" }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-sky-600 to-violet-900 opacity-80 rounded-lg"></div>
@@ -136,7 +136,7 @@ function Home() {
               </Link>
               <Link >
                 <div
-                  className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
+                  className="h-40 w-40 sm:h-60 sm:w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')" }}
                   onClick={openModalJewelry}
                 >
@@ -155,7 +155,8 @@ function Home() {
               </Link>
               <Link>
                 <div
-                  className="h-60 w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
+                ref={imagesSectionRef}
+                  className="h-40 w-40 sm:h-60 sm:w-60 relative bg-cover bg-center rounded-lg hover:scale-105 transition-all"
                   style={{ backgroundImage: "url('https://vulcanpost.com/wp-content/uploads/2022/08/nft-1.jpeg')" }}
                   onClick={openModalCollector}
                 >

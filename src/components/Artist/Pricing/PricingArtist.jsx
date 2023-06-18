@@ -42,8 +42,8 @@ const PricingArtist = () => {
                   <h1 className="text-white text-4xl font-bold mb-6">Artist</h1> 
                     <p className="text-base font-semibold text-white">Monthly subscription</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-bold tracking-tight text-white">$349</span>
-                      <span className="text-sm font-semibold leading-6 tracking-wide text-white">USD</span>
+                      <span className="text-5xl font-bold tracking-tight text-white">500</span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-white">EUR</span>
                     </p>
                     <div className=" ">
                       <div className="mt-8 flex items-center gap-x-4">
