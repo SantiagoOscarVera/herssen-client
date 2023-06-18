@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const handleInitialState = () => {
 
     //Se encarga de verificar si existe un objeto "basket"
@@ -36,7 +37,7 @@ export const favoriteSlice = createSlice({
         removeFavorite: (state, { payload }) => {
             state.favorites = state.favorites.filter(element => element.id !== payload)
             localStorage.setItem("favorites", JSON.stringify({ ...state }));
-        }
+        },
     },
 });
 

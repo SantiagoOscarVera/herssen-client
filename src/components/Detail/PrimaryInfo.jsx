@@ -3,12 +3,15 @@ import React from 'react'
 import { Button } from 'primereact/button'
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/store/shopping/basketSlices';
-import { addFavorite } from '../../redux/store/favorites/favoriteSlice';
+import { addFavorite} from '../../redux/store/favorites/favoriteSlice';
+import Swal from 'sweetalert2';
+
 
 const PrimaryInfo = ({ detail }) => {
+    
 
     const userData = JSON.parse(localStorage.getItem("userData"))
-    console.log(userData);
+    
     const dispatch = useDispatch();
 
     const handleFavorite = () => {
@@ -17,6 +20,16 @@ const PrimaryInfo = ({ detail }) => {
 
     const handleAddBasket = () => {
         dispatch(addItem(detail));
+    }
+
+    const handleInfo = () => {
+        /* dispatch(info(detail)) */
+        Swal.fire({
+            title: 'Sección en construcción',
+            icon: 'info',
+            text: 'El sitio está actualmente en fase beta.',
+            confirmButtonText: 'Entendido'
+        });
     }
 
     return (
@@ -46,7 +59,7 @@ const PrimaryInfo = ({ detail }) => {
                 {
                     userData.type !== "buyer" ? null :
                         <div className="p-buttonset xl:w-72 flex justify-center border-b border-gray-300 pb-4">
-                            <Button label="Buy Now" className='w-3/5' size='large'/>
+                            <Button label="Buy Now" className='w-3/5' size='large'  onClick={handleInfo}/>
                             <Button icon="pi pi-heart" className='w-1/5' onClick={handleFavorite} size='large'/>
                             <Button icon="pi pi-cart-plus" className='w-1/5' onClick={handleAddBasket} size='large'/>
                         </div>

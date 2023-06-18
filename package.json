@@ -26,6 +26,7 @@
     "react-router-dom": "^6.11.2",
     "react-scroll": "^1.8.9",
     "react-stripe-checkout": "^2.6.3",
+    "sweetalert2": "^11.7.12",
     "yup": "^1.2.0"
   },
   "devDependencies": {
