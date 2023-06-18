@@ -28,7 +28,7 @@ const SignUp = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     /* dispatch(createArtistAsync(values)); */
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      (JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 400);
   };

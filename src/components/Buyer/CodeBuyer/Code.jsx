@@ -21,14 +21,15 @@ const BuyerCode = () => {
     /* dispatch(getArtistAsync(values)); */
     navigate("/buyer/login")
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      (JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 400);
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://altcoinoracle.com/wp-content/uploads/2022/10/dolce-and-gabbana-dgfamily-nft-community-gallery-02-1024x1024.jpg')", width: "100vw" }}>
-      <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-3 shadow-lg backdrop-blur-md max-sm:px-8">
+    <div className="flex min-h-screen items-center justify-center bg-black bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://st3.depositphotos.com/2034249/33541/i/450/depositphotos_335410596-stock-photo-black-texture-text-field-space.jpg')", width: "100vw" }}>
+    <div className="rounded-xl bg-black px-16 py-3 shadow-lg backdrop-blur-md max-sm:px-8" style={{ /* border: '1px solid gray', */ boxShadow: '0px 0px 5px gray' }}>
+
         <div className="text-white">
           <div className="mb-8 flex flex-col items-center">
           <img
@@ -48,7 +49,7 @@ const BuyerCode = () => {
             <Form>
               <div className="mb-4 text-lg">
                 <Field
-                  className="rounded-3xl border-none bg-slate-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                   className="rounded-3xl border-none bg-slate-200  px-6 py-2 text-center text-gray-900 placeholder-slate-900 shadow-lg outline-none backdrop-blur-md"
                   type="code"
                   name="code"
                   placeholder="Private Code"
@@ -58,20 +59,15 @@ const BuyerCode = () => {
               </div>
 
               <div className="mt-8 flex justify-center text-lg text-black">
-                <button
+              <button
+                style={{ border: '1px solid black', boxShadow: '0px 0px 5px gray' }}
                   type="submit"
-                  className="rounded-3xl bg-slate-900 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-teal-600"
+                  className="rounded-3xl bg-slate-200  px-10 py-2 text-black shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-black hover:text-white"
                 >
                   Enter Code
                 </button>
               </div>
-              <Link to ="/buyer/form" className="mt-8 flex justify-center text-lg text-black">
-                <button
-                  className="rounded-3xl bg-slate-900 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-teal-600"
-                >
-                  Form Buyer
-                </button>
-              </Link>
+              
             </Form>
           </Formik>
         </div>
