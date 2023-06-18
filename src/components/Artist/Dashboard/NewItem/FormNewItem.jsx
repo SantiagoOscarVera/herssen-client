@@ -82,7 +82,7 @@ const FormNewItem = () => {
   };
 
   return (
-    <form onSubmit={formik.handleSubmit} className="container">
+    <form onSubmit={formik.handleSubmit} className="container p-fluid p-2">
       <div className="row">
         <div className="col-sm-6">
           <div className="form-group">
