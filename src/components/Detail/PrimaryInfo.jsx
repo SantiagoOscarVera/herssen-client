@@ -41,7 +41,6 @@ const PrimaryInfo = ({ detail }) => {
         Swal.fire({
             title: 'Sección en construcción',
             icon: 'info',
-            text: 'El sitio está actualmente en fase beta.',
             confirmButtonText: 'Entendido'
         });
     }

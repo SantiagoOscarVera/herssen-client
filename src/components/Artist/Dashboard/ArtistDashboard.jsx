@@ -13,9 +13,9 @@ function ArtistDashboard() {
 
   return (
     <Layout>
-      <div className='flex  flex-col items-center justify-center'>
-        <h2>Dashboard</h2>
-        <div className='flex gap-5 items-center border border-white p-5'>
+      <div className='flex  flex-col items-center justify-center' style={{ minHeight: '50vh' }}>
+        <h2 className='m-5 text-xl font-medium'>Dashboard</h2>
+        <div className='flex flex-col gap-5 items-center p-5'>
 
           <Link to={ROUTES.item}>
             <Button label="Create New Item" />

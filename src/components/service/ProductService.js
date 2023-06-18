@@ -13,7 +13,7 @@ export const ProductService = {
                 inventoryStatus: 'INSTOCK',
                 rating: 5
             },
-            {
+/*             {
                 id: '1001',
                 artist: 'nvklal433',
                 name: 'Black Watch',
@@ -24,7 +24,7 @@ export const ProductService = {
                 quantity: 61,
                 inventoryStatus: 'INSTOCK',
                 rating: 4
-            },
+            }, */
             {
                 id: '1002',
                 artist: 'zz21cz3c1',
