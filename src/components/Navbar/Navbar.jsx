@@ -132,7 +132,8 @@ function NavBar() {
 
                     <li
                         ref={menuRef}
-                        className={`relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 ${showButtons ? 'bg-indigo-600' : ''}`}
+                        className={`relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 ${showButtons ? 'bg-indigo-600' : ''
+                    } group z-50`}
                         onClick={toggleButtons}
                     >
                         <button /* to={"/"} */>Usuario</button>
