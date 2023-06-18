@@ -86,34 +86,32 @@ const FormNewItem = () => {
       <div className="row">
         <div className="col-sm-6">
           <div className="form-group">
-            <span className="p-float-label">
-              <InputText
-                id="name"
-                name="name"
-                value={formik.values.name}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={classNames({ "p-invalid": isFormFieldInvalid("name") })}
-              />
-              <label htmlFor="input_name">Name</label>
-            </span>
+            <label htmlFor="name"></label>
+            <InputText
+              id="name"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("name") })}
+              placeholder="Name"
+            />
             {getFormErrorMessage("name")}
           </div>
         </div>
         <div className="col-sm-6">
           <div className="form-group">
-            <span className="p-float-label">
-              <InputText
-                id="price"
-                name="price"
-                value={formik.values.price}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={classNames({ "p-invalid": isFormFieldInvalid("price") })}
-                keyfilter="money"
-              />
-              <label htmlFor="input_value">Precio</label>
-            </span>
+            <label htmlFor="price"></label>
+            <InputText
+              id="price"
+              name="price"
+              value={formik.values.price}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("price") })}
+              keyfilter="money"
+              placeholder="Price"
+            />
             {getFormErrorMessage("price")}
           </div>
         </div>
@@ -122,50 +120,46 @@ const FormNewItem = () => {
       <div className="row">
         <div className="col-sm-6">
           <div className="form-group">
-            <span className="p-float-label">
-              <Dropdown
-                id="type"
-                name="type"
-                value={formik.values.type}
-                options={types}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={classNames({ "p-invalid": isFormFieldInvalid("type") })}
-              />
-              <label htmlFor="select_type">Type</label>
-            </span>
+            <label htmlFor="type"></label>
+            <Dropdown
+              id="type"
+              name="type"
+              value={formik.values.type}
+              options={types}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("type") })}
+              placeholder="Select Type"
+            />
             {getFormErrorMessage("type")}
           </div>
         </div>
         <div className="col-sm-6">
           <div className="form-group">
-            <span className="p-float-label">
-              <Dropdown
-                id="collection"
-                name="collection"
-                value={formik.values.collection}
-                options={collections.filter((collection) => collection !== "")}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={classNames({ "p-invalid": isFormFieldInvalid("collection") })}
-                placeholder="Select or create a collection"
-              />
-              <label htmlFor="select_collection">Collection</label>
-            </span>
+            <label htmlFor="collection"></label>
+            <Dropdown
+              id="collection"
+              name="collection"
+              value={formik.values.collection}
+              options={collections.filter((collection) => collection !== "")}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("collection") })}
+              placeholder="Select collection"
+            />
             {getFormErrorMessage("collection")}
           </div>
           <div className="form-group">
-            <span className="p-float-label">
-              <InputText
-                id="newCollection"
-                name="newCollection"
-                value={formik.values.newCollection}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={classNames({ "p-invalid": isFormFieldInvalid("newCollection") })}
-              />
-              <label htmlFor="input_newCollection">New Collection</label>
-            </span>
+            <label htmlFor="newCollection"></label>
+            <InputText
+              id="newCollection"
+              name="newCollection"
+              value={formik.values.newCollection}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("newCollection") })}
+              placeholder="Enter new collection"
+            />
             {getFormErrorMessage("newCollection")}
           </div>
           <div className="form-group text-center mb-4">
@@ -180,20 +174,19 @@ const FormNewItem = () => {
       </div>
 
       <div className="form-group">
-        <span className="p-float-label">
-          <InputTextarea
-            id="description"
-            name="description"
-            rows={5}
-            cols={51}
-            className={classNames({ "p-invalid": isFormFieldInvalid("description") })}
-            value={formik.values.description}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            autoResize
-          />
-          <label htmlFor="description">Description</label>
-        </span>
+        <label htmlFor="description">Description</label>
+        <InputTextarea
+          id="description"
+          name="description"
+          rows={5}
+          cols={51}
+          className={classNames({ "p-invalid": isFormFieldInvalid("description") })}
+          value={formik.values.description}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          autoResize
+          placeholder="Enter description"
+        />
         {getFormErrorMessage("description")}
       </div>
 
