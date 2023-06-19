@@ -28,7 +28,7 @@ export const favoriteSlice = createSlice({
         addFavorite: (state, { payload }) => {
             const duplicatedFav = state.favorites.find(element => element.id === payload.id)
             if (duplicatedFav) {
-                alert("Ya tiene como favorito este Item");
+                alert("This item is already as a favorite");
             } else {
                 state.favorites.push(payload);
                 localStorage.setItem("favorites", JSON.stringify({ ...state }));

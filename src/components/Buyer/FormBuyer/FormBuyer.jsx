@@ -18,8 +18,8 @@ const SignUpBuyer = () => {
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Se requiere nombre de usuario'),
-    email: Yup.string().email('Email invalido').required('Se requiere un email'),
-    password: Yup.string().required('Se requiere una contraseña'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().required('A password is required'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Las contraseñas no coinciden')
       .required('Se requiere confirmar la contraseña')

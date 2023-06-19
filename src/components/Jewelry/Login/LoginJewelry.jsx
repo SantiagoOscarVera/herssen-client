@@ -15,8 +15,8 @@ const LogIn = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Email invalido').required('Se requiere un email'),
-    password: Yup.string().required('Se requiere una contraseña'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().required('A password is required'),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {

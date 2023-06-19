@@ -279,7 +279,7 @@ const Purchased = () => {
                         <Column field="category" header="Category" sortable style={{ minWidth: '10rem' }}></Column>
                         <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable style={{ minWidth: '10rem' }}></Column>
                         <Column field="delete" header="Delete" body={actionBodyTemplate} exportable={false} style={{ minWidth: '5rem' }}></Column>
-                        <Column field="send" header="Recibido" body={action2BodyTemplate} exportable={false} style={{ width: '1rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
+                        <Column field="send" header="Received" body={action2BodyTemplate} exportable={false} style={{ width: '1rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
 
                     </DataTable>
                 </div>
