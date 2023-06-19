@@ -96,27 +96,27 @@ const Footer = () => {
                     About
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Careers
+                    Consulting services
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Ventures
+                    
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <p className="font-medium tracking-wide text-gray-300">
-              Learn
+              Services
                 </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -124,10 +124,10 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    What is an NFT?
+                    Consulting services
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
@@ -143,7 +143,7 @@ const Footer = () => {
                   >
                     How to sell an NFT using Herssen
                   </a>
-                </li>
+                </li> */}
 
               </ul>
             </div>

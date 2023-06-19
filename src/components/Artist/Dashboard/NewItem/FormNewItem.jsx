@@ -191,7 +191,7 @@ const FormNewItem = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="automaticSale">¿Poner a la venta automáticamente?</label>
+        <label htmlFor="automaticSale">¿Put on sale automatically?</label>
         <div className="form-check form-check-inline mt-2">
           <input
             type="radio"
@@ -204,7 +204,7 @@ const FormNewItem = () => {
             className="form-check-input"
           />
           <label htmlFor="automaticSaleYes" className="form-check-label ml-2">
-            Sí
+            Yes
           </label>
         </div>
         <div className="form-check form-check-inline">

@@ -57,7 +57,7 @@ const PrimaryInfo = ({ detail }) => {
 
                 <div className='flex flex-col gap-2 xl:gap-4'>
 
-                    <h4 className='text-sm text-gray-400 px-1'>collections name</h4>
+                    <h4 className='text-sm text-gray-400 px-1'>Item Name</h4>
                     <h1 className='text-3xl font-medium px-1'>{detail.name}</h1>
                     <h2 className='px-1 text-gray-400'>Made by <span className='text-black font font-medium'>{detail.artist}</span></h2>
 

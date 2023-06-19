@@ -14,7 +14,7 @@ const BuyerCode = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    code: Yup.string().required('Se requiere un código'),
+    code: Yup.string().required('Code required'),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {

@@ -84,7 +84,7 @@ function Home() {
           <div className="flex items-center h-full justify-center">
             <div className='mb-12'>
               <h2 className="text-7xl sm:text-7xl font-bold mb-12 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Private Marketplace</h2>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Exclusive Art & Jewelry design</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Exclusive Art & Jewelry designs</h2>
               <div className="flex justify-center">
                 <button className="text-4xl text-white mt-10" onClick={scrollToImages}>
                   &#x2193;

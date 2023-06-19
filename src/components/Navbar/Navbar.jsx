@@ -136,19 +136,19 @@ function NavBar() {
                     } group z-50`}
                         onClick={toggleButtons}
                     >
-                        <button /* to={"/"} */>Usuario</button>
+                        <button /* to={"/"} */>Profile</button>
                         {showButtons && (
                             <div className="absolute left-0 mt-2 py-2 bg-white rounded shadow-lg flex flex-col items-center">
                                 {/* Aquí puedes colocar tus botones */}
-                                <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Perfil</button>
+                                <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Profile</button>
                                 {
                                     userData.type === "buyer" ?
                                         <Link to="/buyer/dashboard/favourites">
-                                            <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Mis Favoritos</button>
+                                            <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">My favourites</button>
                                         </Link> : null
                                 }
                                 <Link to="/">
-                                    <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Cerrar Sesion</button>
+                                    <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Log out</button>
                                 </Link>
                             </div>
 
