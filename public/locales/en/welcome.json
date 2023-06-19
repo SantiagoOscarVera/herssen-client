@@ -33,6 +33,7 @@
     "newItem3":"Drag and drop files here to upload.",
     "type1":"Contemporary Art",
     "type2":"Modern Art",
+    "type3":"History Art",
     "name":"Name",
     "price":"Price",
     "select":"Select Type",
@@ -40,6 +41,7 @@
     "enter":"Enter new collection",
     "add": "Add Collection",
     "description":"Enter Description",
+    "description2":"Description",
     "put":"¿Put on sale automatically?",
     "yes":"Yes",
     "no": "No",
@@ -59,6 +61,13 @@
     "marketplace":"Marketplace",
     "profile":"Profile",
     "logout":"Log Out",
-    "favoritos":"My favourites"
+    "favoritos":"My favourites",
+    "all":"All",
+    "seccion":"Section under construction",
+    "entendido":"Understood",
+    "item":"Item Name",
+    "made":"Made by ",
+    "currentPrice":"Current price"
+    
 }
 

@@ -33,6 +33,7 @@
     "newItem3":"Faites glisser et déposez les fichiers ici pour les télécharger.",
     "type1":"Art contemporain",
     "type2":"Art moderne",
+    "type3":"Art de l'histoire",
     "name":"Nom",
     "price":"Prix",
     "select":"Sélectionner le type",
@@ -59,5 +60,12 @@
     "marketplace":"Place de marché",
     "profile":"Profil",
     "logout":"Se déconnecter",
-    "favoritos":"Mes favoris"
+    "favoritos":"Mes favoris",
+    "all":"Tout",
+    "seccion":"Section en construction",
+    "entendido":"Compris",
+    "item":"Nom de l'élément",
+    "made":"Fabriqué par",
+    "currentPrice":"Prix actuel"
+
 }

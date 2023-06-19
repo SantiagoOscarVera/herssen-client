@@ -5,11 +5,12 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/store/shopping/basketSlices';
 import { addFavorite} from '../../redux/store/favorites/favoriteSlice';
 import Swal from 'sweetalert2';
+import { useTranslation } from "react-i18next";
 
 
 
 const PrimaryInfo = ({ detail }) => {
-    
+    const { t, i18n } = useTranslation(["welcome"]);
 
     const userData = JSON.parse(localStorage.getItem("userData"))
     
@@ -39,9 +40,9 @@ const PrimaryInfo = ({ detail }) => {
     const handleInfo = () => {
         /* dispatch(info(detail)) */
         Swal.fire({
-            title: 'Sección en construcción',
+            title: 'Section under construction',
             icon: 'info',
-            confirmButtonText: 'Entendido'
+            confirmButtonText: 'Understood'
         });
     }
     
@@ -57,17 +58,17 @@ const PrimaryInfo = ({ detail }) => {
 
                 <div className='flex flex-col gap-2 xl:gap-4'>
 
-                    <h4 className='text-sm text-gray-400 px-1'>Item Name</h4>
+                    <h4 className='text-sm text-gray-400 px-1'>{t("item")}</h4>
                     <h1 className='text-3xl font-medium px-1'>{detail.name}</h1>
-                    <h2 className='px-1 text-gray-400'>Made by <span className='text-black font font-medium'>{detail.artist}</span></h2>
+                    <h2 className='px-1 text-gray-400'>{t("made")} <span className='text-black font font-medium'>{detail.artist}</span></h2>
 
                     <div className=' px-1 border-b border-gray-300 pb-4'>
-                        <p className='text-sm'>Category</p>
+                        <p className='text-sm'>{t("categoria")}</p>
                         <p className='text-xl font-medium'>{detail.category}</p>
                     </div>
 
                     <div className=' px-1'>
-                        <p className='text-sm'>Current price </p>
+                        <p className='text-sm'>{t("currentPrice")} </p>
                         <p className='text-xl font-medium'>{detail.price}€</p>
                     </div>
 
