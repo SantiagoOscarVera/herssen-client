@@ -21,7 +21,7 @@ const Card = ({id, image, name, artist, price}) => {
                         <h2 className='font-medium '>{name}</h2>
                         <h4 className=' text-xs'>{artist}</h4>
                     </div>
-                    <p className='font-medium'>${price}USD</p>
+                    <p className='font-medium'>{price}€</p>
                 </div>
             </div>
         </div>

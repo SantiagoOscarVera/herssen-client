@@ -51,7 +51,7 @@ const PrimaryInfo = ({ detail }) => {
     return (
         <div className='gap-10 mt-10 xl:flex'>
             <div className='border border-gray-500 rounded-xl'>
-                <img src="https://i.seadn.io/gcs/files/b56c7ae4f15c3bf3eb9337aa690933a3.png?auto=format&dpr=1&w=1000" alt={detail.name} className='h-96 rounded-xl' />
+                <img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/06/11/15602542206021.jpg" alt={detail.name} className='h-96 rounded-xl' />
             </div>
             <div className='flex flex-col justify-between py-4 gap-4'>
 
@@ -68,7 +68,7 @@ const PrimaryInfo = ({ detail }) => {
 
                     <div className=' px-1'>
                         <p className='text-sm'>Current price </p>
-                        <p className='text-xl font-medium'>${detail.price} USD</p>
+                        <p className='text-xl font-medium'>{detail.price}€</p>
                     </div>
 
                 </div>

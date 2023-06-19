@@ -51,7 +51,7 @@ const Purchased = () => {
     }, []);
 
     const formatCurrency = (value) => {
-        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        return value.toLocaleString('en-US', { style: 'currency', currency: 'EUR' });
     };
 
 
@@ -210,7 +210,7 @@ const Purchased = () => {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-between">
-            <h4 className="m-0">My sold items</h4>
+            <h4 className="m-0">My purchased items</h4>
             <div className="p-input-icon-right">
                 <i className="pi pi-search" />
                 <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />

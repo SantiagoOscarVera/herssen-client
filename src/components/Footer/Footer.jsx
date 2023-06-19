@@ -28,7 +28,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Contemporary Art
@@ -36,7 +36,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Modern Art
@@ -44,7 +44,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     History Art
@@ -59,7 +59,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Blog
@@ -67,7 +67,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Learn
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Help Center
@@ -90,7 +90,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     About
@@ -98,7 +98,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Careers
@@ -106,7 +106,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Ventures
@@ -121,7 +121,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     What is an NFT?
@@ -129,7 +129,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     How to buy an NFT
@@ -138,7 +138,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    href="/"
+                    
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     How to sell an NFT using Herssen
@@ -157,7 +157,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a
-              href="/"
+              
               className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
@@ -165,7 +165,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="/"
+              
               className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
             >
               <svg viewBox="0 0 30 30" fill="currentColor" className="h-6">
@@ -174,7 +174,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="/"
+              
               className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
