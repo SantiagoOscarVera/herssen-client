@@ -5,8 +5,18 @@ import Layout from '../Layouts/LayoutCliente';
 import PricingArtist from "../Artist/Pricing/PricingArtist";
 import PricingJewelry from "../Jewelry/Pricing/PricingJewelry";
 import PricingCollector from "../Collector/Pricing/PricingCollector";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+
+  const { t, i18n } = useTranslation(["welcome"]);
+  function changeLanguageToFrances() {
+    i18n.changeLanguage("frances");
+}
+function changeLanguageToEnglish() {
+  i18n.changeLanguage("en");
+}
+
   const scrollToImages = () => {
     scroll.scrollTo(imagesSectionOffsetTop, {
       smooth: true,
@@ -83,12 +93,14 @@ function Home() {
         <div >
           <div className="flex items-center h-full justify-center">
             <div className='mb-12'>
-              <h2 className="text-7xl sm:text-7xl font-bold mb-12 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Private Marketplace</h2>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>Exclusive Art & Jewelry designs</h2>
+              <h2 className="text-7xl sm:text-7xl font-bold mb-12 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>{t("title")}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white" style={{ fontWeight: 'lighter', fontFamily: 'Roboto Condensed, sans-serif' }}>{t("subtitulo")}</h2>
               <div className="flex justify-center">
                 <button className="text-4xl text-white mt-10" onClick={scrollToImages}>
                   &#x2193;
                 </button>
+                <button className=" text-white mt-10" onClick={changeLanguageToFrances}>FRANCES</button>
+                <button className=" text-white mt-10" onClick={changeLanguageToEnglish}>INGLES</button>
               </div>
             </div>
           </div>
@@ -112,7 +124,7 @@ function Home() {
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
                   >
-                    ARTIST
+                    {t("artist")}
                   </span>
                 </div>
               </Link>
@@ -130,7 +142,7 @@ function Home() {
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
                   >
-                    BUYER
+                    {t("buyer")}
                   </span>
                 </div>
               </Link>
@@ -149,7 +161,7 @@ function Home() {
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
                   >
-                    JEWELRY
+                    {t("joyero")}
                   </span>
                 </div>
               </Link>
@@ -164,12 +176,12 @@ function Home() {
                   <span
                     className="absolute inset-0 flex items-center justify-center text-white font-bold"
                     style={{
-                      fontSize: '1.5em',
+                      fontSize: '1em',
                       fontWeight: 'lighter',
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
                   >
-                    COLLECTOR
+                     {t("collector")}
                   </span>
                 </div>
               </Link>

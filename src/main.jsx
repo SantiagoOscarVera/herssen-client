@@ -9,6 +9,7 @@ import { store } from './redux/store/index.js'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
+import "./config/i18next.config"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

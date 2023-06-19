@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PricingArtist = () => {
+  const { t, i18n } = useTranslation(["welcome"]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
@@ -37,15 +39,15 @@ const PricingArtist = () => {
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-black py-10 text-center ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center py-5">
                   <div className="mx-auto max-w-xs px-8">
-                  <h1 className="text-white text-4xl font-bold mb-6">Artist</h1> 
-                    <p className="text-base font-semibold text-white">Monthly subscription</p>
+                  <h1 className="text-white text-4xl font-bold mb-6">{t("artist2")}</h1> 
+                    <p className="text-base font-semibold text-white">{t("mes")}</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
                       <span className="text-5xl font-bold tracking-tight text-white">500</span>
                       <span className="text-sm font-semibold leading-6 tracking-wide text-white">EUR</span>
                     </p>
                     <div className=" ">
                       <div className="mt-8 flex items-center gap-x-4">
-                        <h4 className="flex-none text-sm font-semibold leading-3 text-sky-600">What’s included</h4>
+                        <h4 className="flex-none text-sm font-semibold leading-3 text-sky-600">{t("what")}</h4>
                         <div className="h-px flex-auto bg-gray-100"></div>
                       </div>
                       <ul role="list" className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-white sm:grid-cols-1 sm:gap-3">
@@ -53,40 +55,40 @@ const PricingArtist = () => {
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Access to exclusive buyers 
+                          {t("item1")}
                         </li>
                         <li className="flex gap-x-3">
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Access to NFT Technology
+                          {t("item2")}
                         </li>
                         <li className="flex gap-x-3">
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Fundamentals of NFTs
+                          {t("item3")}
                         </li>
                         <li className="flex gap-x-3">
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Art Storage
+                          {t("item4")}
                         </li>
                         <li className="flex gap-x-3">
                           <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Exclusive interviews
+                          {t("item5")}
                         </li>
                       </ul>
                     </div>
-                    <Link  /* onClick={openModal} */ to="/artist/login" className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">Subscribe as an Artist</Link>
+                    <Link  /* onClick={openModal} */ to="/artist/login" className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">{t("suscribite")}</Link>
                     <p className="mt-6 text-xs leading-5 text-white flex items-center justify-center gap-x-1">
-                      Already have an account?
+                    {t("cuenta")}
                       <Link to="/artist/login">
                       <button className="text-black bg-white hover:bg-white hover:text-black rounded-md px-2 py-2 text-xs font-medium">
-                        Login
+                      {t("login")}
                       </button>
                       </Link>
                     </p>
