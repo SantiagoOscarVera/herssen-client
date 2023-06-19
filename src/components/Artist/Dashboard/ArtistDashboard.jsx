@@ -18,7 +18,7 @@ function ArtistDashboard() {
         <div className='flex flex-col gap-5 items-center p-5'>
 
           <Link to={ROUTES.item}>
-            <Button label="Create New Item" />
+            <Button name='item' label="Create New Item" />
           </Link>
 
           <Link to={ROUTES.collection}>

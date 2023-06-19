@@ -28,7 +28,7 @@ function Home() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'auto'; 
   };
   const closeModal = () => {
     setIsModalOpen(false);
@@ -39,7 +39,7 @@ function Home() {
 
   const openModalJewelry = () => {
     setIsModalOpenJewelry(true);
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'auto'; 
   };
 
   const closeModalJewelry = () => {
@@ -51,7 +51,7 @@ function Home() {
 
   const openModalCollector = () => {
     setIsModalOpenCollector(true);
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'auto'; 
   };
 
   const closeModalCollector = () => {

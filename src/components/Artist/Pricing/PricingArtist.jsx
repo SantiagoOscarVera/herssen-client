@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Layout from '../../Layouts/LayoutCliente';
-import Stripe from "../../Stripe/Stripe";
 
 const PricingArtist = () => {
 
