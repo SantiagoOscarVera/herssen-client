@@ -10,12 +10,6 @@ import { useTranslation } from "react-i18next";
 function Home() {
 
   const { t, i18n } = useTranslation(["welcome"]);
-  function changeLanguageToFrances() {
-    i18n.changeLanguage("frances");
-}
-function changeLanguageToEnglish() {
-  i18n.changeLanguage("en");
-}
 
   const scrollToImages = () => {
     scroll.scrollTo(imagesSectionOffsetTop, {
@@ -99,8 +93,6 @@ function changeLanguageToEnglish() {
                 <button className="text-4xl text-white mt-10" onClick={scrollToImages}>
                   &#x2193;
                 </button>
-                <button className=" text-white mt-10" onClick={changeLanguageToFrances}>FRANCES</button>
-                <button className=" text-white mt-10" onClick={changeLanguageToEnglish}>INGLES</button>
               </div>
             </div>
           </div>
@@ -119,7 +111,7 @@ function changeLanguageToEnglish() {
                   <span
                     className="absolute inset-0 flex items-center justify-center text-white font-bold"
                     style={{
-                      fontSize: '1.5em',
+                      fontSize: '1.3em',
                       fontWeight: 'lighter',
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
@@ -137,7 +129,7 @@ function changeLanguageToEnglish() {
                   <span
                     className="absolute inset-0 flex items-center justify-center text-white font-bold"
                     style={{
-                      fontSize: '1.5em',
+                      fontSize: '1.3em',
                       fontWeight: 'lighter',
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
@@ -156,7 +148,7 @@ function changeLanguageToEnglish() {
                   <span
                     className="absolute inset-0 flex items-center justify-center text-white font-bold"
                     style={{
-                      fontSize: '1.5em',
+                      fontSize: '1.3em',
                       fontWeight: 'lighter',
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}
@@ -176,7 +168,7 @@ function changeLanguageToEnglish() {
                   <span
                     className="absolute inset-0 flex items-center justify-center text-white font-bold"
                     style={{
-                      fontSize: '1em',
+                      fontSize: '1.01em',
                       fontWeight: 'lighter',
                       fontFamily: 'Roboto Condensed, sans-serif'
                     }}

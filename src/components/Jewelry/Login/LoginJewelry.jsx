@@ -4,10 +4,13 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { getJewelryTest } from "../../../redux/store/user/userSlice";
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 const LogIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation(["welcome"]);
 
   const initialValues = {
     email: '',
@@ -44,7 +47,7 @@ const LogIn = () => {
                 className=""
               />
             <h1 className="mb-2 text-2xl">Herssen</h1>
-            <span className="text-gray-300">Enter your user data</span>
+            <span className="text-gray-300">{t("data")}</span>
           </div>
           <Formik
             initialValues={initialValues}

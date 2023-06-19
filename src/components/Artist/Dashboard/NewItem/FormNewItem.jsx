@@ -5,9 +5,11 @@ import { Button } from "primereact/button";
 import { classNames } from "primereact/utils";
 import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
+import { useTranslation } from "react-i18next";
 
 const FormNewItem = () => {
-  const types = ["contemporaneo", "moderno"];
+  const { t, i18n } = useTranslation(["welcome"]);
+  const types = ["Art1", "Art2"];
   const [collections, setCollections] = useState([
     "Collection 1",
     "Collection 2",
@@ -94,7 +96,7 @@ const FormNewItem = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={classNames({ "p-invalid": isFormFieldInvalid("name") })}
-              placeholder="Name"
+              placeholder={t("name")}
             />
             {getFormErrorMessage("name")}
           </div>
@@ -110,7 +112,7 @@ const FormNewItem = () => {
               onBlur={formik.handleBlur}
               className={classNames({ "p-invalid": isFormFieldInvalid("price") })}
               keyfilter="money"
-              placeholder="Price"
+              placeholder={t("price")}
             />
             {getFormErrorMessage("price")}
           </div>
@@ -129,7 +131,7 @@ const FormNewItem = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={classNames({ "p-invalid": isFormFieldInvalid("type") })}
-              placeholder="Select Type"
+              placeholder={t("select")}
             />
             {getFormErrorMessage("type")}
           </div>
@@ -145,7 +147,7 @@ const FormNewItem = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={classNames({ "p-invalid": isFormFieldInvalid("collection") })}
-              placeholder="Select collection"
+              placeholder={t("select2")}
             />
             {getFormErrorMessage("collection")}
           </div>
@@ -158,14 +160,14 @@ const FormNewItem = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={classNames({ "p-invalid": isFormFieldInvalid("newCollection") })}
-              placeholder="Enter new collection"
+              placeholder={t("enter")}
             />
             {getFormErrorMessage("newCollection")}
           </div>
           <div className="form-group text-center mb-4">
             <Button
               type="button"
-              label="Add Collection"
+              label={t("add")}
               onClick={handleNewCollection}
               className="p-button-secondary"
             />
@@ -174,7 +176,7 @@ const FormNewItem = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">{t("description")}</label>
         <InputTextarea
           id="description"
           name="description"
@@ -185,13 +187,13 @@ const FormNewItem = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           autoResize
-          placeholder="Enter description"
+          placeholder={t("enter")}
         />
         {getFormErrorMessage("description")}
       </div>
 
       <div className="form-group">
-        <label htmlFor="automaticSale">¿Put on sale automatically?</label>
+        <label htmlFor="automaticSale">{t("put")}</label>
         <div className="form-check form-check-inline mt-2">
           <input
             type="radio"
@@ -204,7 +206,7 @@ const FormNewItem = () => {
             className="form-check-input"
           />
           <label htmlFor="automaticSaleYes" className="form-check-label ml-2">
-            Yes
+          {t("yes")}
           </label>
         </div>
         <div className="form-check form-check-inline">
@@ -219,13 +221,13 @@ const FormNewItem = () => {
             className="form-check-input"
           />
           <label htmlFor="automaticSaleNo" className="form-check-label ml-2">
-            No
+          {t("no")}
           </label>
         </div>
       </div>
 
       <div className="text-center">
-        <Button type="submit" label="Submit" className="p-button-secondary mt-3 mb-9" />
+        <Button type="submit" label={t("submit")} className="p-button-secondary mt-3 mb-9" />
       </div>
     </form>
   );

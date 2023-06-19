@@ -1,4 +1,6 @@
 {
+    "ingles": "English",
+    "frances":"French",
     "title": "Private Marketplace",
     "subtitulo":"Exclusive Art & Jewelry designs",
     "artist":"ARTIST",
@@ -19,8 +21,31 @@
     "suscribite2":"Subscribe as an Jewelry",
     "suscribite3":"Subscribe as an Collector",
     "cuenta":"Already have an account?",
-    "login":"Login"
-    
-    
+    "login":"Login",
+    "data":"Enter your user data",
+    "contraseña":"Password",
+    "register": "Register",
+    "dashboard":"Dashboard",
+    "newItem": "Create a New Item",
+    "collections":"My Collection",
+    "sales":"My Sales",
+    "newItem2":"Upload image, Video, Audio or 3D model",
+    "newItem3":"Drag and drop files here to upload.",
+    "type1":"Contemporary Art",
+    "type2":"Modern Art",
+    "name":"Name",
+    "price":"Price",
+    "select":"Select Type",
+    "select2":"Select collection",
+    "enter":"Enter new collection",
+    "add": "Add Collection",
+    "description":"Enter Description",
+    "put":"¿Put on sale automatically?",
+    "yes":"Yes",
+    "no": "No",
+    "submit":"Submit",
+    "choose":"Choose",
+    "upload":"Upload",
+    "cancel":"Cancel"
 }
 
