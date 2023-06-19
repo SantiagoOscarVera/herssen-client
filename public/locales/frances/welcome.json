@@ -27,7 +27,7 @@
     "register":"Enregistrer",
     "dashboard":"Tableau de bord",
     "newItem": "Créer un nouvel élément",
-    "collections":"Ma collection",
+    "collections":"Ma Collection",
     "sales":"Mes ventes",
     "newItem2":"Téléchargez une image, une vidéo, un fichier audio ou un modèle 3D",
     "newItem3":"Faites glisser et déposez les fichiers ici pour les télécharger.",
@@ -46,5 +46,18 @@
     "submit":"Soumettre",
     "choose":"Choisir",
     "upload":"Télécharger",
-    "cancel":"Annuler"
+    "cancel":"Annuler",
+    "search":"Chercher",
+    "image":"Image",
+    "categoria":"Catégorie",
+    "reviews":"Avis",
+    "delete":"Supprimer",
+    "sent":"Envoyé à l'acheteur?",
+    "total":"Total",
+    "delete2":"Êtes-vous sûr de vouloir supprimer",
+    "confirm":"Confirmer",
+    "marketplace":"Place de marché",
+    "profile":"Profil",
+    "logout":"Se déconnecter",
+    "favoritos":"Mes favoris"
 }

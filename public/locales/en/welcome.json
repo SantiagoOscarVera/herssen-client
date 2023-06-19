@@ -28,7 +28,7 @@
     "dashboard":"Dashboard",
     "newItem": "Create a New Item",
     "collections":"My Collection",
-    "sales":"My Sales",
+    "sales":"My sold items",
     "newItem2":"Upload image, Video, Audio or 3D model",
     "newItem3":"Drag and drop files here to upload.",
     "type1":"Contemporary Art",
@@ -46,6 +46,19 @@
     "submit":"Submit",
     "choose":"Choose",
     "upload":"Upload",
-    "cancel":"Cancel"
+    "cancel":"Cancel",
+    "search":"Search",
+    "image":"Image",
+    "categoria":"Category",
+    "reviews":"Reviews",
+    "delete":"Delete",
+    "sent":"Sent to buyer?",
+    "total":"Total",
+    "delete2":"Are you sure you want to delete",
+    "confirm":"Confirm",
+    "marketplace":"Marketplace",
+    "profile":"Profile",
+    "logout":"Log Out",
+    "favoritos":"My favourites"
 }
 

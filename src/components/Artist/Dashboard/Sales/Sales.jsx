@@ -13,9 +13,12 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import Layout from '../../../Layouts/ArtistDashLayout';
+import { useTranslation } from "react-i18next";
 
 
 const Sales = () => {
+
+    const { t, i18n } = useTranslation(["welcome"]);
 
     let emptyProduct = {
         id: null,
@@ -212,10 +215,10 @@ const Sales = () => {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-between">
-            <h4 className="m-0">My sold items</h4>
+            <h4 className="m-0">{t("sales")}</h4>
             <div className="p-input-icon-right">
                 <i className="pi pi-search" />
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder={t("search")} />
             </div>
         </div>
     );
@@ -227,8 +230,8 @@ const Sales = () => {
     );
     const deleteProductDialogFooter = (
         <React.Fragment>
-            <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteProduct} />
+            <Button label={t("no")} icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
+            <Button label={t("yes")} icon="pi pi-check" severity="danger" onClick={deleteProduct} />
         </React.Fragment>
     );
     const deleteProductsDialogFooter = (
@@ -269,19 +272,19 @@ const Sales = () => {
                         rows={10}
                         rowsPerPageOptions={[5, 10, 25]}
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                        /* currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" */
                         globalFilter={globalFilter}
                         header={header}
                     >
 
-                        <Column field="image" header="Image" body={imageBodyTemplate}></Column>
-                        <Column field="name" header="Name" sortable style={{ minWidth: '10rem' }}></Column>
-                        <Column field="artist" header="Artist" sortable style={{ minWidth: '8rem' }}></Column>
-                        <Column field="price" header="Price" body={priceBodyTemplate} sortable style={{ minWidth: '8rem' }}></Column>
-                        <Column field="category" header="Category" sortable style={{ minWidth: '10rem' }}></Column>
-                        <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable style={{ minWidth: '10rem' }}></Column>
-                        <Column field="delete" header="Delete" body={actionBodyTemplate} exportable={false} style={{ minWidth: '5rem' }}></Column>
-                        <Column field="send" header="Sent to buyer?" body={action2BodyTemplate} exportable={false} style={{ width: '1rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
+                        <Column field="image" header={t("image")}body={imageBodyTemplate}></Column>
+                        <Column field="name" header={t("name")} sortable style={{ minWidth: '10rem' }}></Column>
+                        <Column field="artist" header={t("artist2")} sortable style={{ minWidth: '8rem' }}></Column>
+                        <Column field="price" header={t("price")} body={priceBodyTemplate} sortable style={{ minWidth: '8rem' }}></Column>
+                        <Column field="category" header={t("categoria")} sortable style={{ minWidth: '10rem' }}></Column>
+                        <Column field="rating" header={t("reviews")} body={ratingBodyTemplate} sortable style={{ minWidth: '10rem' }}></Column>
+                        <Column field="delete" header={t("delete")} body={actionBodyTemplate} exportable={false} style={{ minWidth: '5rem' }}></Column>
+                        <Column field="send" header={t("sent")} body={action2BodyTemplate} exportable={false} style={{ width: '1rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
 
                     </DataTable>
                 </div>
@@ -344,12 +347,12 @@ const Sales = () => {
                     <span>Total: {calculateTotal()}</span>
                 </div>
 
-                <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
+                <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={t("confirm")} modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                     <div className="confirmation-content">
                         <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                         {product && (
                             <span>
-                                Are you sure you want to delete <b>{product.name}</b>?
+                                {t("delete2")} <b>{product.name}</b>?
                             </span>
                         )}
                     </div>
