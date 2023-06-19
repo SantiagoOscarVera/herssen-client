@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { ProductService } from '../../../service/ProductService';
+import { ProductServiceMpv1 } from '../../../service/ProductServiceMpv1';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
@@ -42,7 +42,7 @@ const Sales = () => {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
 
     useEffect(() => {
-        ProductService.getProducts().then((data) =>
+        ProductServiceMpv1.getProducts().then((data) =>
             setProducts(
                 data.map((product) => ({
                     ...product,
@@ -212,7 +212,7 @@ const Sales = () => {
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-between">
-            <h4 className="m-0">My Purchased items</h4>
+            <h4 className="m-0">My sold items</h4>
             <div className="p-input-icon-right">
                 <i className="pi pi-search" />
                 <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />

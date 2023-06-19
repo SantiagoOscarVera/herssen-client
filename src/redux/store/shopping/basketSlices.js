@@ -29,7 +29,7 @@ const basketSlice = createSlice({
         addItem: (state, { payload }) => {
             const itemDuplicate = state.products.find(element => element.id === payload.id);
             if (itemDuplicate) {
-                alert("ya cargo este item a su carrito");
+                alert("Ya cargo este item a su carrito");
             } else {
                 state.products.push(payload);
                 state.amount++;
