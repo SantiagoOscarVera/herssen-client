@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Layout from '../../Layouts/LayoutCliente';
-/* import Stripe from "../../Stripe/Stripe"; */
+import { useTranslation } from "react-i18next";
 
 const PricingJewelry = () => {
+  const { t, i18n } = useTranslation(["welcome"]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
@@ -31,64 +31,64 @@ const PricingJewelry = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/diamante-abstracto-colorido-91805199.jpg')",  height:"1%" }}>
-      <Layout main="h-full max-w-screen-xl flex m-auto">
-        <div className="flex flex-col justify-center items-center  min-h-screen w-full mx-auto">
+    <div >
+
+        <div className="flex flex-col justify-center items-center min-h-screen w-full mx-auto">
           <div className="max-w-7xl px-6 lg:px-8 " style={{ marginTop: "-9%" }}>
-            <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-10 sm:mb-10 lg:mx-0 lg:flex lg:max-w-none">
+            <div className="mx-auto mt-16 max-w-2xl rounded-3xl  sm:mt-10 sm:mb-10 lg:mx-0 lg:flex lg:max-w-none">
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center py-5">
+                <div className="rounded-2xl bg-black py-10 text-center ring-1 ring-inset ring-gray-900/5 flex flex-col justify-center py-5">
                   <div className="mx-auto max-w-xs px-8">
-                  <h1 className="text-gray-600 text-4xl font-bold mb-6">Jewelry</h1> 
-                    <p className="text-base font-semibold text-gray-600">Monthly subscription</p>
+                  <h1 className="text-white text-4xl font-bold mb-6">{t("joyero2")}</h1> 
+                    <p className="text-base font-semibold text-white">{t("mes")}</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+                      <span className="text-5xl font-bold tracking-tight text-white">500</span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-white">EUR</span>
                     </p>
                     <div className=" ">
                       <div className="mt-8 flex items-center gap-x-4">
-                        <h4 className="flex-none text-sm font-semibold leading-3 text-indigo-600">What’s included</h4>
+                        <h4 className="flex-none text-sm font-semibold leading-3 text-sky-600">{t("what")}</h4>
                         <div className="h-px flex-auto bg-gray-100"></div>
                       </div>
-                      <ul role="list" className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-1 sm:gap-3">
+                      <ul role="list" className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-white sm:grid-cols-1 sm:gap-3">
                         <li className="flex gap-x-3">
-                          <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Access to exclusive buyers 
+                          {t("item1")}
                         </li>
                         <li className="flex gap-x-3">
-                          <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Access to NFT Technology
+                          {t("item2")}
                         </li>
                         <li className="flex gap-x-3">
-                          <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Fundamentals of NFTs & Blockchain technology
+                          {t("item3")}
                         </li>
                         <li className="flex gap-x-3">
-                          <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Art Storage
+                          {t("item4")}
                         </li>
                         <li className="flex gap-x-3">
-                          <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <svg className="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
-                          Exclusive interviews
+                          {t("item5")}
                         </li>
                       </ul>
                     </div>
-                    <a  onClick={openModal} href="#" className="mt-10 block w-full rounded-md bg-indigo-600 hover:bg-indigo-500 hover:text-white px-3 py-2 text-center text-sm font-semibold text-white shadow-sm ">Subscribe as an Jewelry</a>
-                    <p className="mt-6 text-xs leading-5 text-gray-600 flex items-center justify-center gap-x-1">
-                      Already have an account?
+                    <Link  /* onClick={openModal} */  to="/jewelry/login" className="mt-10 block w-full rounded-md bg-white hover:bg-white hover:text-black px-3 py-2 text-center text-sm font-semibold text-black shadow-sm ">{t("suscribite2")}</Link>
+                    <p className="mt-6 text-xs leading-5 text-white flex items-center justify-center gap-x-1">
+                    {t("cuenta")}
                       <Link to="/jewelry/login">
-                      <button className="text-white bg-indigo-600 hover:bg-indigo-500 hover:text-white rounded-md px-2 py-2 text-xs font-medium">
-                        Login
+                      <button className="text-black bg-white hover:bg-white hover:text-black rounded-md px-2 py-2 text-xs font-medium">
+                      {t("login")}
                       </button>
                       </Link>
                     </p>
@@ -98,13 +98,13 @@ const PricingJewelry = () => {
             </div>
           </div>
         </div>
-      </Layout>
+      
       {/* modal */}
       {isModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen px-4 text-center">
             <div className="fixed inset-0 transition-opacity">
-              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+              <div className="absolute inset-0 bg-"></div>
             </div>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
             &#8203;
@@ -123,12 +123,12 @@ const PricingJewelry = () => {
                 <div className="flex justify-center w-full sm:flex-row">
                 <button
                   onClick={closeModal}
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                 >
                   Cancel
                 </button>
                   <Link to="/jewelry/form">
-                    <button className="mt-3 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-950 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    <button className="mt-3 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                       Crear cuenta
                     </button>
                   </Link>

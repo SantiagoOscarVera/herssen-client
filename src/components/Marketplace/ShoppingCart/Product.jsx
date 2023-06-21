@@ -15,8 +15,8 @@ const Product = ({ name, amount, image, price, total, id }) => {
             <img src={image} alt={name + "glasses"} className="w-40" />
             <div className='w-1/2 px-10'>
                 <p className='text-xl font-medium' >{name}</p>
-                <p className='text-lg tracking-wide'>${price}</p>
-                <button onClick={handleRemove} className='text-red-500 tracking-wide pt-1 pb-3'>Remover</button>
+                <p className='text-lg tracking-wide'>{price}€</p>
+                <button onClick={handleRemove} className='text-red-500 tracking-wide pt-1 pb-3'>Remove</button>
             </div>
         </div>
     );

@@ -24,11 +24,11 @@ const BasketProduct = () => {
                 </>
             ) : (
                 <>
-                    <p className='text-2x1 text-gray-700 font-medium text-center'>En este momentos no hay productos para mostrar 😢</p>
+                    <p className='text-2x1 text-gray-700 font-medium text-center'>There are currently no products to display</p>
                 </>)}
             <div className='flex flex-row items-center justify-evenly py-8'>
-                <p className='text-2x1 font-medium'>Total</p>
-                <p className='text-2x1 font-medium'>${total.toFixed(2)}</p>
+                {/* <p className='text-2x1 font-medium'>Total</p> */}
+                {/* <p className='text-2x1 font-medium'>${total.toFixed(2)}</p> */}
             </div>
         </div>
     );

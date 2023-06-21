@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
+import { useTranslation } from "react-i18next";
 
 function NavBar() {
-
+    const { t, i18n } = useTranslation(["welcome"]);
     const [showButtons, setShowButtons] = useState(false);
     const [visibleRight, setVisibleRight] = useState(false);
     const menuRef = useRef(null);
@@ -79,10 +80,10 @@ function NavBar() {
                     }
 
                     <li className="relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100">
-                        <Link to={"/marketplace"}>Marketplace</Link>
+                        <Link to={"/marketplace"}>{t("marketplace")}</Link>
                     </li>
                     <li className="relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100">
-                        <Link to={ROUTES[userData.type].dashboard}>Dashboard</Link>
+                        <Link to={ROUTES[userData.type].dashboard}>{t("dashboard")}</Link>
                     </li>
 
                     <li
@@ -91,14 +92,14 @@ function NavBar() {
                         {
                             userData.type === "buyer" ?
                                 <Link to="/buyer/dashboard/favourites">
-                                    My favs
+                                    {t("favoritos")}
                                 </Link>
                                 : null
                         }
                     </li>
                     <li>
                         <Link to="/">
-                            <button className="block text-xl font font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white">Log Out</button>
+                            <button className="block text-xl font font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white">{t("logout")}</button>
                         </Link>
                     </li>
 
@@ -124,30 +125,31 @@ function NavBar() {
                     }
 
                     <li className="relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100">
-                        <Link to={"/marketplace"}>Marketplace</Link>
+                        <Link to={"/marketplace"}>{t("marketplace")}</Link>
                     </li>
                     <li className="relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100">
-                        <Link to={ROUTES[userData.type].dashboard}>Dashboard</Link>
+                        <Link to={ROUTES[userData.type].dashboard}>{t("dashboard")}</Link>
                     </li>
 
                     <li
                         ref={menuRef}
-                        className={`relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 ${showButtons ? 'bg-indigo-600' : ''}`}
+                        className={`relative font-medium before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-indigo-600 before:transition hover:before:scale-x-100 ${showButtons ? 'bg-indigo-600' : ''
+                    } group z-50`}
                         onClick={toggleButtons}
                     >
-                        <button /* to={"/"} */>Usuario</button>
+                        <button /* to={"/"} */>{t("profile")}</button>
                         {showButtons && (
                             <div className="absolute left-0 mt-2 py-2 bg-white rounded shadow-lg flex flex-col items-center">
                                 {/* Aquí puedes colocar tus botones */}
-                                <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Perfil</button>
+                                <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">{t("profile")}</button>
                                 {
                                     userData.type === "buyer" ?
                                         <Link to="/buyer/dashboard/favourites">
-                                            <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Mis Favoritos</button>
+                                            <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">{t("favoritos")}</button>
                                         </Link> : null
                                 }
                                 <Link to="/">
-                                    <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">Cerrar Sesion</button>
+                                    <button className="block px-4 py-2 text-sm text-gray-800 hover:bg-indigo-600 hover:text-white">{t("logout")}</button>
                                 </Link>
                             </div>
 

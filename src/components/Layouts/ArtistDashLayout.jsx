@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import NavBar from "../Navbar/Navbar";
 import React from "react";
 
@@ -8,6 +9,7 @@ const Layout = ({ children, main }) => {
       <main className={main}>
         {children}
       </main>
+      <Footer/>
     </>
   );
 };
