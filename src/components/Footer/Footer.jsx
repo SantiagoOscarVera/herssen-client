@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation(["welcome"]);
+
   return (
     <div className="bg-neutral-900" style={{ position: 'relative', width: '100%' }}>
       <div className="px-4 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -15,11 +18,11 @@ const Footer = () => {
               />
               <span className="text-white text-2xl">Herssen</span>
             </div>
-            <p className="mt-4 text-sm text-gray-500">
-              The marketplace that unites the best of the NFT world and fashion
+            <p className=" mb-3 mr-9 text-sm text-gray-500">
+              {t("footer")}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4 ml-3">
           <div>
               <p className="font-medium tracking-wide text-gray-300">
                 Art
@@ -31,7 +34,7 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Contemporary Art
+                    {t("type1")}
                   </a>
                 </li>
                 <li>
@@ -39,7 +42,7 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Modern Art
+                    {t("type2")}
                   </a>
                 </li>
                 <li>
@@ -47,14 +50,14 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    History Art
+                    {t("type3")}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <p className="font-medium tracking-wide text-gray-300">
-              Resources
+              {t("footer3")}
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -70,7 +73,7 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Learn
+                    {t("footer4")}
                   </a>
                 </li>
                 <li>
@@ -78,14 +81,14 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Help Center
+                    {t("footer5")}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <p className="font-medium tracking-wide text-gray-300">
-              Company
+              {t("footer6")}
                 </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -93,7 +96,7 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    About
+                    {t("footer7")}
                   </a>
                 </li>
                 {/* <li>
@@ -116,7 +119,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="font-medium tracking-wide text-gray-300">
-              Services
+              {t("footer8")}
                 </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -124,7 +127,7 @@ const Footer = () => {
                     
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
-                    Consulting services
+                    {t("footer9")}
                   </a>
                 </li>
                 {/* <li>
