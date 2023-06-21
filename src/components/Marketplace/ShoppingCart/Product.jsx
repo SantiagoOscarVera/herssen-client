@@ -1,8 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeItem } from '../../../redux/store/shopping/basketSlices';
+import { useTranslation } from "react-i18next";
 
 const Product = ({ name, amount, image, price, total, id }) => {
+    const { t, i18n } = useTranslation(["welcome"]);
 
     const dispatch = useDispatch();
 
@@ -16,7 +18,7 @@ const Product = ({ name, amount, image, price, total, id }) => {
             <div className='w-1/2 px-10'>
                 <p className='text-xl font-medium' >{name}</p>
                 <p className='text-lg tracking-wide'>{price}€</p>
-                <button onClick={handleRemove} className='text-red-500 tracking-wide pt-1 pb-3'>Remove</button>
+                <button onClick={handleRemove} className='text-red-500 tracking-wide pt-1 pb-3'>{t("remove")}</button>
             </div>
         </div>
     );

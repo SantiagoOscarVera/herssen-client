@@ -67,7 +67,16 @@
     "entendido":"Understood",
     "item":"Item Name",
     "made":"Made by ",
-    "currentPrice":"Current price"
-    
+    "currentPrice":"Current price",
+    "footer":"The marketplace that unites the best of the NFT world and fashion",
+    "footer2":"© Copyright 2023 Herssen. All rights reserved.",
+    "footer3": "Resources",
+    "footer4": "Learn",
+    "footer5": "Help Center",
+    "footer6": "Company",
+    "footer7": "About",
+    "footer8": "Services",
+    "footer9": "Consulting services",
+    "remove": "Remove"
 }
 
