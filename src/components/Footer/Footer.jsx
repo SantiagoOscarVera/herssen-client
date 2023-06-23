@@ -5,7 +5,7 @@ const Footer = () => {
   const { t, i18n } = useTranslation(["welcome"]);
 
   return (
-    <div className="bg-neutral-900" style={{ position: 'relative', width: '100%' }}>
+    <div className="bg-neutral-900 " style={{ width: '100%' }}>
       <div className="px-4 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid row-gap-10 mb-4 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
