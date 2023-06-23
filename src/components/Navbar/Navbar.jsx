@@ -26,6 +26,9 @@ function NavBar() {
         },
         buyer: {
             dashboard: "/buyer/dashboard"
+        },
+        collector:{
+            dashboard:"/collector/dashboard"
         }
     }
 

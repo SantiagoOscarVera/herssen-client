@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 /* import { createArtist } from './artistAPI'; */
-import { getArtistUser, getBuyerUser, getJewelryUser } from '../../../components/service/users';
+import { getArtistUser, getBuyerUser, getJewelryUser, getCollectorUser } from '../../../components/service/users';
 
 export const userSlice = createSlice({
   name: 'user',
@@ -25,6 +25,7 @@ export const getArtistTest = () => (dispatch) => {
 export const getJewelryTest = () => (dispatch) => {
   const response = getJewelryUser();
   dispatch(getUser(response))
+  localStorage.setItem("userData", JSON.stringify(response));
 }
 
 export const getBuyerTest = () => (dispatch) => {
@@ -32,5 +33,12 @@ export const getBuyerTest = () => (dispatch) => {
   dispatch(getUser(response));
   localStorage.setItem("userData", JSON.stringify(response));
 }
+
+export const getCollectorTest = () => (dispatch) => {
+  const response = getCollectorUser();
+  dispatch(getUser(response));
+  localStorage.setItem("userData", JSON.stringify(response));
+}
+
 
 export default userSlice.reducer;

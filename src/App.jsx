@@ -26,6 +26,10 @@ import JewelryNewItem from "./components/Jewelry/Dashboard/NewItem/JewelryNewIte
 import MyCollectionJewelry from "./components/Jewelry/Dashboard/MyCollection/MyCollectionJewelry";
 import SalesJewelry from "./components/Jewelry/Dashboard/Sales/SalesJewelry";
 import Detail from "./components/Detail/Detail";
+import CollectorDashboard from "./components/Collector/Dashboard/CollectorDash";
+import MyCollectionCollector from "./components/Collector/Dashboard/MyCollection/MyCollection";
+import NewCollection from "./components/Collector/Dashboard/NewItem/NewCollection";
+import SalesCollector from "./components/Collector/Dashboard/Sales/SalesCollector";
 
 
 function App() {
@@ -55,6 +59,10 @@ function App() {
       <Route exact path="/collector" element={<PricingCollector />} />
       <Route exact path="/collector/form" element={<FormCollector />} />
       <Route exact path="/collector/login" element={<LoginCollector />} />
+      <Route exact path="/collector/dashboard" element={<CollectorDashboard />} />
+      <Route exact path="/collector/dashboard/item" element={< NewCollection />} />
+      <Route exact path="/collector/dashboard/collection" element={<MyCollectionCollector/>} />
+      <Route exact path="/collector/dashboard/sales" element={<SalesCollector/>} />
       <Route exact path="/marketplace" element={<MarketPlace />} />
       <Route exact path="/marketplace/:id" element={<Detail />} />
       <Route exact path="/marketplace/shopping" element={<ShoppingCart />} />
