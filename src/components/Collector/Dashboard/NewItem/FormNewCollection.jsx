@@ -7,9 +7,14 @@ import { Dropdown } from "primereact/dropdown";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useTranslation } from "react-i18next";
 
-const FormNewItem = () => {
+const FormNewCollection = () => {
   const { t, i18n } = useTranslation(["welcome"]);
   const types = ["Art1", "Art2"];
+  const [collections, setCollections] = useState([
+    "Collection 1",
+    "Collection 2",
+    "Collection 3"
+  ]);
   const [automaticSale, setAutomaticSale] = useState("yes");
 
   const formik = useFormik({
@@ -18,6 +23,8 @@ const FormNewItem = () => {
       description: "",
       price: "",
       type: "",
+      collection: "",
+      newCollection: "",
       automaticSale: ""
     },
     validate: (data) => {
@@ -34,6 +41,9 @@ const FormNewItem = () => {
       }
       if (!data.type) {
         errors.type = "Type is required";
+      }
+      if (!data.collection && !data.newCollection) {
+        errors.collection = "Collection is required";
       }
 
       return errors;
@@ -126,6 +136,43 @@ const FormNewItem = () => {
             {getFormErrorMessage("type")}
           </div>
         </div>
+        <div className="col-sm-6">
+          <div className="form-group">
+            <label htmlFor="collection"></label>
+            <Dropdown
+              id="collection"
+              name="collection"
+              value={formik.values.collection}
+              options={collections.filter((collection) => collection !== "")}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("collection") })}
+              placeholder={t("select2")}
+            />
+            {getFormErrorMessage("collection")}
+          </div>
+          <div className="form-group">
+            <label htmlFor="newCollection"></label>
+            <InputText
+              id="newCollection"
+              name="newCollection"
+              value={formik.values.newCollection}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={classNames({ "p-invalid": isFormFieldInvalid("newCollection") })}
+              placeholder={t("enter")}
+            />
+            {getFormErrorMessage("newCollection")}
+          </div>
+          <div className="form-group text-center mb-4">
+            <Button
+              type="button"
+              label={t("add")}
+              onClick={handleNewCollection}
+              className="p-button-secondary"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="form-group">
@@ -186,4 +233,4 @@ const FormNewItem = () => {
   );
 };
 
-export default FormNewItem;
+export default FormNewCollection;
